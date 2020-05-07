@@ -71,6 +71,21 @@ import { NgxG2plotModule } from 'ngx-g2plot';
 export class G2plotDemoModule { }
 ```
 
+# 所有指令列表
+
+指令名 | 图表名
+-|-
+starkG2plotLine | Line - 折线图
+starkG2plotArea | Area - 面积图
+starkG2plotStepLine | StepLine - 阶梯折图
+starkG2plotBar | StackedArea - 堆叠面积图
+starkG2plotBar | Column - 柱状图
+starkG2plotBar | StackedColumn - 堆叠柱状图
+starkG2plotBar | GroupedColumn - 分组柱状图
+
+# g2plot官方文档地址
+https://g2plot.antv.vision/zh/docs/manual/plots/line
+
 # Change Log
 0.0.1 初始版本--2020.5.7
 
