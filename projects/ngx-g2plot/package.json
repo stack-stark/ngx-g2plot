@@ -6,5 +6,23 @@
     "@angular/core": "^9.0.7",
     "tslib": "^1.10.0",
     "@antv/g2plot": "^1.1.0"
-  }
+  },
+  "description": "angular的g2plot封装,方便使用",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stack-stark/ngx-g2plot.git"
+  },
+  "author": "stack-stark",
+  "license": "MIT",
+  "keywords": [
+    "ngx-g2plot",
+    "angular",
+    "angular library",
+    "g2",
+    "g2plot"
+  ],
+  "bugs": {
+    "url": "https://github.com/stack-stark/ngx-g2plot/issues"
+  },
+  "homepage": "https://github.com/stack-stark/ngx-g2plot#readme"
 }

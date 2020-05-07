@@ -1,24 +1,81 @@
-# NgxG2plot
+# about
+angular的g2plot封装,方便使用
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.
+# Install
 
-## Code scaffolding
+``` bash
+npm install --save ngx-g2plot
+#or
+yarn add ngx-g2plot
+```
 
-Run `ng generate component component-name --project ngx-g2plot` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-g2plot`.
-> Note: Don't forget to add `--project ngx-g2plot` or else it will be added to the default project in your `angular.json` file. 
+# Usage
+### 安装
+``` bash
+npm install --save ngx-g2plot
+```
 
-## Build
+### 使用
+#### g2plot-demo.component.html
+``` html
+<div starkG2plotBar [options]="options"></div>
+```
 
-Run `ng build ngx-g2plot` to build the project. The build artifacts will be stored in the `dist/` directory.
+#### g2plot-demo.component.ts
+``` js
+import { Component, OnInit } from '@angular/core';
 
-## Publishing
+@Component({
+  selector: 'app-g2plot',
+  templateUrl: './g2plot.component.html',
+  styleUrls: ['./g2plot.component.less']
+})
+export class G2plotDemoComponent implements OnInit {
 
-After building your library with `ng build ngx-g2plot`, go to the dist folder `cd dist/ngx-g2plot` and run `npm publish`.
+ data = [
+    { year: '1951 年', sales: 38 },
+    { year: '1952 年', sales: 52 },
+    { year: '1956 年', sales: 61 },
+    { year: '1957 年', sales: 145 },
+    { year: '1958 年', sales: 48 },
+  ];
 
-## Running unit tests
+  options =  {
+    data: this.data,
+    xField: 'sales',
+    yField: 'year',
+    colorField: 'year',
+  };
+  constructor() {
 
-Run `ng test ngx-g2plot` to execute the unit tests via [Karma](https://karma-runner.github.io).
+  }
 
-## Further help
+  ngOnInit(): void {
+  }
+}
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```
+#### g2plot-demo.module.ts
+``` ts
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { NgxG2plotModule } from 'ngx-g2plot';
+
+@NgModule({
+  declarations: [G2plotDemoComponent],
+  imports: [
+    CommonModule,
+    NgxG2plotModule
+  ]
+})
+export class G2plotDemoModule { }
+```
+
+# Change Log
+0.0.1 初始版本--2020.5.7
+
+# Demo
+http://ngx-g2plot.asnyc.cn
+
+# License
+MIT
