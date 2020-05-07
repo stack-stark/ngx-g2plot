@@ -5,14 +5,30 @@ import {
   G2plotGaugeDirective,
   G2plotColumnDirective,
   G2plotBarDirective,
-  G2plotAreaDirective
+  G2plotAreaDirective,
+  G2plotStepLineDirective,
+  G2plotStackedAreaDirective,
+  G2plotStackedColumnDirective,
+  G2plotGroupedColumnDirective,
+  G2plotRangeColumnDirective,
+  G2plotWaterfallDirective,
+  G2plotStackedBarDirective,
+  G2plotGroupedBarDirective,
+  G2plotRangeBarDirective,
+  G2plotDonutDirective,
+  G2plotRoseDirective,
+  G2plotStackedRoseDirective,
+  G2plotGroupedRoseDirective,
+  G2plotScatterDirective,
+  G2plotBubbleDirective,
+  G2plotHeatmapDirective,
+  G2plotDensityHeatmapDirective,
+  G2plotTreemapDirective,
+  G2plotCalendarDirective,
+  G2plotBulletDirective,
+  G2plotLiquidDirective,
+  G2plotWordCloudDirective,
 } from './index';
-import { G2plotStepLineDirective } from './g2plot-StepLine/g2plot-step-line.directive';
-import { G2plotStackedAreaDirective } from './g2plot-StackedArea/g2plot-stacked-area.directive';
-import { G2plotStackedColumnDirective } from './g2plot-StackedColumn/g2plot-stacked-column.directive';
-import { G2plotGroupedColumnDirective } from './g2plot-GroupedColumn/g2plot-grouped-column.directive';
-import { G2plotRangeColumnDirective } from './g2plot-RangeColumn/g2plot-range-column.directive';
-
 
 @NgModule({
   declarations: [
@@ -26,7 +42,24 @@ import { G2plotRangeColumnDirective } from './g2plot-RangeColumn/g2plot-range-co
     G2plotStackedAreaDirective,
     G2plotStackedColumnDirective,
     G2plotGroupedColumnDirective,
-    G2plotRangeColumnDirective
+    G2plotRangeColumnDirective,
+    G2plotWaterfallDirective,
+    G2plotStackedBarDirective,
+    G2plotGroupedBarDirective,
+    G2plotRangeBarDirective,
+    G2plotDonutDirective,
+    G2plotRoseDirective,
+    G2plotStackedRoseDirective,
+    G2plotGroupedRoseDirective,
+    G2plotScatterDirective,
+    G2plotBubbleDirective,
+    G2plotHeatmapDirective,
+    G2plotDensityHeatmapDirective,
+    G2plotTreemapDirective,
+    G2plotCalendarDirective,
+    G2plotBulletDirective,
+    G2plotLiquidDirective,
+    G2plotWordCloudDirective
   ],
   imports: [
   ],
@@ -36,7 +69,29 @@ import { G2plotRangeColumnDirective } from './g2plot-RangeColumn/g2plot-range-co
     G2plotGaugeDirective,
     G2plotColumnDirective,
     G2plotBarDirective,
-    G2plotAreaDirective
+    G2plotAreaDirective,
+    G2plotStepLineDirective,
+    G2plotStackedAreaDirective,
+    G2plotStackedColumnDirective,
+    G2plotGroupedColumnDirective,
+    G2plotRangeColumnDirective,
+    G2plotWaterfallDirective,
+    G2plotStackedBarDirective,
+    G2plotGroupedBarDirective,
+    G2plotRangeBarDirective,
+    G2plotDonutDirective,
+    G2plotRoseDirective,
+    G2plotStackedRoseDirective,
+    G2plotGroupedRoseDirective,
+    G2plotScatterDirective,
+    G2plotBubbleDirective,
+    G2plotHeatmapDirective,
+    G2plotDensityHeatmapDirective,
+    G2plotTreemapDirective,
+    G2plotCalendarDirective,
+    G2plotBulletDirective,
+    G2plotLiquidDirective,
+    G2plotWordCloudDirective
   ]
 })
 export class NgxG2plotModule { }
