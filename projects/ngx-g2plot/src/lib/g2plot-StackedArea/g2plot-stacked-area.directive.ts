@@ -1,11 +1,11 @@
 import { Directive, ElementRef, Input, AfterViewInit } from '@angular/core';
-import { Gauge, GaugeConfig } from '@antv/g2plot';
+import { StackedArea, StackedAreaConfig } from '@antv/g2plot';
 @Directive({
-  selector: '[starkG2plotGauge]'
+  selector: '[starkG2plotStackedArea]'
 })
-export class G2plotGaugeDirective implements AfterViewInit {
+export class G2plotStackedAreaDirective implements AfterViewInit {
 
-  @Input() options: GaugeConfig;
+  @Input() options: StackedAreaConfig;
 
   constructor(
     private elementRef: ElementRef
@@ -14,7 +14,7 @@ export class G2plotGaugeDirective implements AfterViewInit {
   ngAfterViewInit(): void {
     const hostElement = this.elementRef.nativeElement;
     const stark = this;
-    new Gauge(hostElement, stark.options).render();
+    new StackedArea(hostElement, stark.options).render();
   }
 
 }

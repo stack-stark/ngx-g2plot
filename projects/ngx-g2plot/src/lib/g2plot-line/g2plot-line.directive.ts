@@ -1,11 +1,11 @@
 import { Directive, ElementRef, Input, AfterViewInit } from '@angular/core';
-import { Line } from '@antv/g2plot';
+import { Line, LineConfig } from '@antv/g2plot';
 @Directive({
   selector: '[starkG2plotLine]'
 })
 export class G2plotLineDirective implements AfterViewInit {
 
-  @Input() options: object;
+  @Input() options: LineConfig;
 
   constructor(
     private elementRef: ElementRef

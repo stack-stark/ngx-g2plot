@@ -1,11 +1,11 @@
 import { Directive, ElementRef, Input, AfterViewInit } from '@angular/core';
-import { Column } from '@antv/g2plot';
+import { Column, ColumnConfig } from '@antv/g2plot';
 @Directive({
   selector: '[starkG2plotColumn]'
 })
 export class G2plotColumnDirective implements AfterViewInit {
 
-  @Input() options: object;
+  @Input() options: ColumnConfig;
 
   constructor(
     private elementRef: ElementRef

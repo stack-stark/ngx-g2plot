@@ -1,11 +1,12 @@
-import { Directive, ElementRef, Input, AfterViewInit } from '@angular/core';
-import { Gauge, GaugeConfig } from '@antv/g2plot';
-@Directive({
-  selector: '[starkG2plotGauge]'
-})
-export class G2plotGaugeDirective implements AfterViewInit {
 
-  @Input() options: GaugeConfig;
+import { Directive, ElementRef, Input, AfterViewInit } from '@angular/core';
+import { StepLine, StepLineConfig } from '@antv/g2plot';
+@Directive({
+  selector: '[starkG2plotStepLine]'
+})
+export class G2plotStepLineDirective implements AfterViewInit {
+
+  @Input() options: StepLineConfig;
 
   constructor(
     private elementRef: ElementRef
@@ -14,7 +15,7 @@ export class G2plotGaugeDirective implements AfterViewInit {
   ngAfterViewInit(): void {
     const hostElement = this.elementRef.nativeElement;
     const stark = this;
-    new Gauge(hostElement, stark.options).render();
+    new StepLine(hostElement, stark.options).render();
   }
 
 }

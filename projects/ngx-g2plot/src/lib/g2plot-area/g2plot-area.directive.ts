@@ -1,11 +1,11 @@
 import { Directive, ElementRef, Input, AfterViewInit } from '@angular/core';
-import { Area } from '@antv/g2plot';
+import { Area, AreaConfig } from '@antv/g2plot';
 @Directive({
   selector: '[starkG2plotArea]'
 })
 export class G2plotAreaDirective implements AfterViewInit {
 
-  @Input() options: object;
+  @Input() options: AreaConfig;
 
   constructor(
     private elementRef: ElementRef

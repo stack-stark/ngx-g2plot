@@ -1,13 +1,12 @@
-import { Directive, ElementRef, AfterViewInit, Output, EventEmitter, Input } from '@angular/core';
-import { Bar, DataItem } from '@antv/g2plot';
+import { Directive, ElementRef, AfterViewInit, Input } from '@angular/core';
+import { Bar, BarConfig } from '@antv/g2plot';
 
 @Directive({
   selector: '[starkG2plotBar]'
 })
 export class G2plotBarDirective implements AfterViewInit {
 
-  @Output() g2Bar = new EventEmitter();
-  @Input() options: object;
+  @Input() options: BarConfig;
 
   constructor(
     private elementRef: ElementRef
