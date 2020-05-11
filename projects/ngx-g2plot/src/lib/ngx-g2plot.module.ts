@@ -28,6 +28,7 @@ import {
   G2plotBulletDirective,
   G2plotLiquidDirective,
   G2plotWordCloudDirective,
+  G2plotHistogramDirective
 } from './index';
 
 @NgModule({
@@ -59,7 +60,8 @@ import {
     G2plotCalendarDirective,
     G2plotBulletDirective,
     G2plotLiquidDirective,
-    G2plotWordCloudDirective
+    G2plotWordCloudDirective,
+    G2plotHistogramDirective
   ],
   imports: [
   ],
@@ -91,7 +93,8 @@ import {
     G2plotCalendarDirective,
     G2plotBulletDirective,
     G2plotLiquidDirective,
-    G2plotWordCloudDirective
+    G2plotWordCloudDirective,
+    G2plotHistogramDirective
   ]
 })
 export class NgxG2plotModule { }

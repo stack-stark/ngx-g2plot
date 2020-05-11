@@ -26,3 +26,4 @@ export * from './g2plot-calendar/g2plot-calendar.directive';
 export * from './g2plot-bullet/g2plot-bullet.directive';
 export * from './g2plot-liquid/g2plot-liquid.directive';
 export * from './g2plot-WordClord/g2plot-word-clord.directive';
+export * from './g2plot-histogram/g2plot-histogram.directive';
