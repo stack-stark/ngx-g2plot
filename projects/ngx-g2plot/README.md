@@ -106,7 +106,7 @@ https://g2plot.antv.vision/zh/docs/manual/plots/line
 
 
 # Preview
-http://ngx-g2plot.asnyc.cn
+https://stack-stark.github.io/ngx-g2plot-preview-compiled/
 
 # License
 MIT
