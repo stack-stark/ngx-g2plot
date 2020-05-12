@@ -30,6 +30,7 @@ import {
   G2plotWordCloudDirective,
   G2plotHistogramDirective
 } from './index';
+import { G2plotRadarDirective } from './g2plot-radar/g2plot-radar.directive';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import {
     G2plotBulletDirective,
     G2plotLiquidDirective,
     G2plotWordCloudDirective,
-    G2plotHistogramDirective
+    G2plotHistogramDirective,
+    G2plotRadarDirective
   ],
   imports: [
   ],
