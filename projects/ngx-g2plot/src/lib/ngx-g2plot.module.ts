@@ -96,7 +96,8 @@ import {
     G2plotBulletDirective,
     G2plotLiquidDirective,
     G2plotWordCloudDirective,
-    G2plotHistogramDirective
+    G2plotHistogramDirective,
+    G2plotRadarDirective
   ]
 })
 export class NgxG2plotModule { }
