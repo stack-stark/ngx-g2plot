@@ -1,11 +1,14 @@
-import { Directive, ElementRef, Input, AfterViewInit } from '@angular/core';
+import { Directive, ElementRef, Input, AfterViewInit, Output } from '@angular/core';
 import { RangeBar, RangeBarConfig } from '@antv/g2plot';
 @Directive({
-  selector: '[starkG2plotRangeBar]'
+  selector: '[starkG2plotRangeBar]',
+  exportAs: 'g2plotRangeBar'
 })
 export class G2plotRangeBarDirective implements AfterViewInit {
 
   @Input() options: RangeBarConfig;
+
+  public instance;
 
   constructor(
     private elementRef: ElementRef
@@ -14,7 +17,29 @@ export class G2plotRangeBarDirective implements AfterViewInit {
   ngAfterViewInit(): void {
     const hostElement = this.elementRef.nativeElement;
     const stark = this;
-    new RangeBar(hostElement, stark.options).render();
+    this.instance = new RangeBar(hostElement, stark.options);
+    this.instance.render();
+  }
+
+  updateConfig(options: RangeBarConfig): void {
+    this.instance.updateConfig(options);
+    this.instance.render();
+  }
+
+  changeData(newData): void {
+    this.instance.changeData(newData);
+  }
+
+  repaint(): void {
+    this.instance.repaint();
+  }
+
+  destroy(): void {
+    this.instance.destroy();
   }
 
 }
+
+
+
+

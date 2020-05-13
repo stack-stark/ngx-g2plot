@@ -1,12 +1,14 @@
-
-import { Directive, ElementRef, Input, AfterViewInit } from '@angular/core';
+import { Directive, ElementRef, Input, AfterViewInit, Output } from '@angular/core';
 import { GroupedRose, GroupedRoseConfig } from '@antv/g2plot';
 @Directive({
-  selector: '[starkG2plotGroupedRose]'
+  selector: '[starkG2plotGroupedRose]',
+  exportAs: 'g2plotGroupedRose'
 })
 export class G2plotGroupedRoseDirective implements AfterViewInit {
 
   @Input() options: GroupedRoseConfig;
+
+  public instance;
 
   constructor(
     private elementRef: ElementRef
@@ -15,7 +17,27 @@ export class G2plotGroupedRoseDirective implements AfterViewInit {
   ngAfterViewInit(): void {
     const hostElement = this.elementRef.nativeElement;
     const stark = this;
-    new GroupedRose(hostElement, stark.options).render();
+    this.instance = new GroupedRose(hostElement, stark.options);
+    this.instance.render();
+  }
+
+  updateConfig(options: GroupedRoseConfig): void {
+    this.instance.updateConfig(options);
+    this.instance.render();
+  }
+
+  changeData(newData): void {
+    this.instance.changeData(newData);
+  }
+
+  repaint(): void {
+    this.instance.repaint();
+  }
+
+  destroy(): void {
+    this.instance.destroy();
   }
 
 }
+
+

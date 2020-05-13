@@ -1,12 +1,15 @@
 
-import { Directive, ElementRef, Input, AfterViewInit } from '@angular/core';
+import { Directive, ElementRef, Input, AfterViewInit, Output } from '@angular/core';
 import { StackedBar, StackedBarConfig } from '@antv/g2plot';
 @Directive({
-  selector: '[starkG2plotStackedBar]'
+  selector: '[starkG2plotStackedBar]',
+  exportAs: 'g2plotStackedBar'
 })
 export class G2plotStackedBarDirective implements AfterViewInit {
 
   @Input() options: StackedBarConfig;
+
+  public instance;
 
   constructor(
     private elementRef: ElementRef
@@ -15,7 +18,26 @@ export class G2plotStackedBarDirective implements AfterViewInit {
   ngAfterViewInit(): void {
     const hostElement = this.elementRef.nativeElement;
     const stark = this;
-    new StackedBar(hostElement, stark.options).render();
+    this.instance = new StackedBar(hostElement, stark.options);
+    this.instance.render();
+  }
+
+  updateConfig(options: StackedBarConfig): void {
+    this.instance.updateConfig(options);
+    this.instance.render();
+  }
+
+  changeData(newData): void {
+    this.instance.changeData(newData);
+  }
+
+  repaint(): void {
+    this.instance.repaint();
+  }
+
+  destroy(): void {
+    this.instance.destroy();
   }
 
 }
+
