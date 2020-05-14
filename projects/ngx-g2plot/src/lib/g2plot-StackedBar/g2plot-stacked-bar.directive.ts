@@ -1,5 +1,5 @@
 
-import { Directive, ElementRef, Input, AfterViewInit, Output } from '@angular/core';
+import { Directive, ElementRef, Input, AfterViewInit } from '@angular/core';
 import { StackedBar, StackedBarConfig } from '@antv/g2plot';
 @Directive({
   selector: '[starkG2plotStackedBar]',

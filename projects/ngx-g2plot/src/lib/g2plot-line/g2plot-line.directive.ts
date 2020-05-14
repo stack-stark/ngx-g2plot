@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Input, AfterViewInit, Output } from '@angular/core';
+import { Directive, ElementRef, Input, AfterViewInit } from '@angular/core';
 import { Line, LineConfig } from '@antv/g2plot';
 @Directive({
   selector: '[starkG2plotLine]',

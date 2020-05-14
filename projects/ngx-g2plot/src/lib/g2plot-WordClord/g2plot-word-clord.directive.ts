@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Input, AfterViewInit, Output } from '@angular/core';
+import { Directive, ElementRef, Input, AfterViewInit } from '@angular/core';
 import { WordCloud, WordCloudConfig } from '@antv/g2plot';
 @Directive({
   selector: '[starkG2plotWordCloud]',
