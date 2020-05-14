@@ -8,7 +8,7 @@ export class G2plotBarDirective implements AfterViewInit {
 
   @Input() options: BarConfig;
 
-  public instance;
+  public instance: Bar;
 
   constructor(
     private elementRef: ElementRef
@@ -16,8 +16,7 @@ export class G2plotBarDirective implements AfterViewInit {
 
   ngAfterViewInit(): void {
     const hostElement = this.elementRef.nativeElement;
-    const stark = this;
-    this.instance = new Bar(hostElement, stark.options);
+    this.instance = new Bar(hostElement, this.options);
     this.instance.render();
   }
 
@@ -26,7 +25,7 @@ export class G2plotBarDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  changeData(newData): void {
+  changeData(newData: Array<object>): void {
     this.instance.changeData(newData);
   }
 

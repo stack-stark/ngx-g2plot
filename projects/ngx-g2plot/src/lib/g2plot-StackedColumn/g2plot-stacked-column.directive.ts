@@ -8,7 +8,7 @@ export class G2plotStackedColumnDirective implements AfterViewInit {
 
   @Input() options: StackedColumnConfig;
 
-  public instance;
+  public instance: StackedColumn;
 
   constructor(
     private elementRef: ElementRef
@@ -16,8 +16,7 @@ export class G2plotStackedColumnDirective implements AfterViewInit {
 
   ngAfterViewInit(): void {
     const hostElement = this.elementRef.nativeElement;
-    const stark = this;
-    this.instance = new StackedColumn(hostElement, stark.options);
+    this.instance = new StackedColumn(hostElement, this.options);
     this.instance.render();
   }
 
@@ -26,7 +25,7 @@ export class G2plotStackedColumnDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  changeData(newData): void {
+  changeData(newData: Array<object>): void {
     this.instance.changeData(newData);
   }
 

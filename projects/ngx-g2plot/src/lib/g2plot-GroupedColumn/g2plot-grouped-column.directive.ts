@@ -8,7 +8,7 @@ export class G2plotGroupedColumnDirective implements AfterViewInit {
 
   @Input() options: GroupedColumnConfig;
 
-  public instance;
+  public instance: GroupedColumn;
 
   constructor(
     private elementRef: ElementRef
@@ -16,8 +16,7 @@ export class G2plotGroupedColumnDirective implements AfterViewInit {
 
   ngAfterViewInit(): void {
     const hostElement = this.elementRef.nativeElement;
-    const stark = this;
-    this.instance = new GroupedColumn(hostElement, stark.options);
+    this.instance = new GroupedColumn(hostElement, this.options);
     this.instance.render();
   }
 
@@ -26,7 +25,7 @@ export class G2plotGroupedColumnDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  changeData(newData): void {
+  changeData(newData: Array<object>): void {
     this.instance.changeData(newData);
   }
 

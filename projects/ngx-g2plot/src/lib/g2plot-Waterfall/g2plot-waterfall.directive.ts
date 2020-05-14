@@ -8,7 +8,7 @@ export class G2plotWaterfallDirective implements AfterViewInit {
 
   @Input() options: WaterfallConfig;
 
-  public instance;
+  public instance: Waterfall;
 
   constructor(
     private elementRef: ElementRef
@@ -16,8 +16,7 @@ export class G2plotWaterfallDirective implements AfterViewInit {
 
   ngAfterViewInit(): void {
     const hostElement = this.elementRef.nativeElement;
-    const stark = this;
-    this.instance = new Waterfall(hostElement, stark.options);
+    this.instance = new Waterfall(hostElement, this.options);
     this.instance.render();
   }
 
@@ -26,7 +25,7 @@ export class G2plotWaterfallDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  changeData(newData): void {
+  changeData(newData: Array<object>): void {
     this.instance.changeData(newData);
   }
 

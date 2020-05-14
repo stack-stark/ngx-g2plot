@@ -8,7 +8,7 @@ export class G2plotStepLineDirective implements AfterViewInit {
 
   @Input() options: StepLineConfig;
 
-  public instance;
+  public instance: StepLine;
 
   constructor(
     private elementRef: ElementRef
@@ -16,8 +16,7 @@ export class G2plotStepLineDirective implements AfterViewInit {
 
   ngAfterViewInit(): void {
     const hostElement = this.elementRef.nativeElement;
-    const stark = this;
-    this.instance = new StepLine(hostElement, stark.options);
+    this.instance = new StepLine(hostElement, this.options);
     this.instance.render();
   }
 
@@ -26,7 +25,7 @@ export class G2plotStepLineDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  changeData(newData): void {
+  changeData(newData: Array<object>): void {
     this.instance.changeData(newData);
   }
 

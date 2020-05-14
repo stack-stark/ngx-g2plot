@@ -9,7 +9,7 @@ export class G2plotBubbleDirective implements AfterViewInit {
 
   @Input() options: BubbleConfig;
 
-  public instance;
+  public instance: Bubble;
 
   constructor(
     private elementRef: ElementRef
@@ -17,8 +17,7 @@ export class G2plotBubbleDirective implements AfterViewInit {
 
   ngAfterViewInit(): void {
     const hostElement = this.elementRef.nativeElement;
-    const stark = this;
-    this.instance = new Bubble(hostElement, stark.options);
+    this.instance = new Bubble(hostElement, this.options);
     this.instance.render();
   }
 
@@ -27,7 +26,7 @@ export class G2plotBubbleDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  changeData(newData): void {
+  changeData(newData: Array<object>): void {
     this.instance.changeData(newData);
   }
 

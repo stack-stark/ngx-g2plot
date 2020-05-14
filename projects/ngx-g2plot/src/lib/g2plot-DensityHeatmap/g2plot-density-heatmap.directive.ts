@@ -8,7 +8,7 @@ export class G2plotDensityHeatmapDirective implements AfterViewInit {
 
   @Input() options: DensityHeatmapConfig;
 
-  public instance;
+  public instance: DensityHeatmap;
 
   constructor(
     private elementRef: ElementRef
@@ -16,8 +16,7 @@ export class G2plotDensityHeatmapDirective implements AfterViewInit {
 
   ngAfterViewInit(): void {
     const hostElement = this.elementRef.nativeElement;
-    const stark = this;
-    this.instance = new DensityHeatmap(hostElement, stark.options);
+    this.instance = new DensityHeatmap(hostElement, this.options);
     this.instance.render();
   }
 
@@ -26,7 +25,7 @@ export class G2plotDensityHeatmapDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  changeData(newData): void {
+  changeData(newData: Array<object>): void {
     this.instance.changeData(newData);
   }
 

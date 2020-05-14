@@ -8,7 +8,7 @@ export class G2plotColumnDirective implements AfterViewInit {
 
   @Input() options: ColumnConfig;
 
-  public instance;
+  public instance: Column;
 
   constructor(
     private elementRef: ElementRef
@@ -16,8 +16,7 @@ export class G2plotColumnDirective implements AfterViewInit {
 
   ngAfterViewInit(): void {
     const hostElement = this.elementRef.nativeElement;
-    const stark = this;
-    this.instance = new Column(hostElement, stark.options);
+    this.instance = new Column(hostElement, this.options);
     this.instance.render();
   }
 
@@ -26,7 +25,7 @@ export class G2plotColumnDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  changeData(newData): void {
+  changeData(newData: Array<object>): void {
     this.instance.changeData(newData);
   }
 

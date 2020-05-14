@@ -8,7 +8,7 @@ export class G2plotWordCloudDirective implements AfterViewInit {
 
   @Input() options: WordCloudConfig;
 
-  public instance;
+  public instance: WordCloud;
 
   constructor(
     private elementRef: ElementRef
@@ -16,8 +16,7 @@ export class G2plotWordCloudDirective implements AfterViewInit {
 
   ngAfterViewInit(): void {
     const hostElement = this.elementRef.nativeElement;
-    const stark = this;
-    this.instance = new WordCloud(hostElement, stark.options);
+    this.instance = new WordCloud(hostElement, this.options);
     this.instance.render();
   }
 
@@ -26,7 +25,7 @@ export class G2plotWordCloudDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  changeData(newData): void {
+  changeData(newData: Array<object>): void {
     this.instance.changeData(newData);
   }
 

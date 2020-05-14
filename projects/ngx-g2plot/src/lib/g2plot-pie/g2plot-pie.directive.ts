@@ -8,7 +8,7 @@ export class G2plotPieDirective implements AfterViewInit {
 
   @Input() options: PieConfig;
 
-  public instance;
+  public instance: Pie;
 
   constructor(
     private elementRef: ElementRef
@@ -16,8 +16,7 @@ export class G2plotPieDirective implements AfterViewInit {
 
   ngAfterViewInit(): void {
     const hostElement = this.elementRef.nativeElement;
-    const stark = this;
-    this.instance = new Pie(hostElement, stark.options);
+    this.instance = new Pie(hostElement, this.options);
     this.instance.render();
   }
 
@@ -26,7 +25,7 @@ export class G2plotPieDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  changeData(newData): void {
+  changeData(newData: Array<object>): void {
     this.instance.changeData(newData);
   }
 

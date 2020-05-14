@@ -8,7 +8,7 @@ export class G2plotGroupedBarDirective implements AfterViewInit {
 
   @Input() options: GroupedBarConfig;
 
-  public instance;
+  public instance: GroupedBar;
 
   constructor(
     private elementRef: ElementRef
@@ -16,8 +16,7 @@ export class G2plotGroupedBarDirective implements AfterViewInit {
 
   ngAfterViewInit(): void {
     const hostElement = this.elementRef.nativeElement;
-    const stark = this;
-    this.instance = new GroupedBar(hostElement, stark.options);
+    this.instance = new GroupedBar(hostElement, this.options);
     this.instance.render();
   }
 
@@ -26,7 +25,7 @@ export class G2plotGroupedBarDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  changeData(newData): void {
+  changeData(newData: Array<object>): void {
     this.instance.changeData(newData);
   }
 

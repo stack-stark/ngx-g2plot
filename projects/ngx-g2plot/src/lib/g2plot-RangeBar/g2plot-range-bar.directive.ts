@@ -8,7 +8,7 @@ export class G2plotRangeBarDirective implements AfterViewInit {
 
   @Input() options: RangeBarConfig;
 
-  public instance;
+  public instance: RangeBar;
 
   constructor(
     private elementRef: ElementRef
@@ -16,8 +16,7 @@ export class G2plotRangeBarDirective implements AfterViewInit {
 
   ngAfterViewInit(): void {
     const hostElement = this.elementRef.nativeElement;
-    const stark = this;
-    this.instance = new RangeBar(hostElement, stark.options);
+    this.instance = new RangeBar(hostElement, this.options);
     this.instance.render();
   }
 
@@ -26,7 +25,7 @@ export class G2plotRangeBarDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  changeData(newData): void {
+  changeData(newData: Array<object>): void {
     this.instance.changeData(newData);
   }
 

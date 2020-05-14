@@ -9,7 +9,7 @@ export class G2plotScatterDirective implements AfterViewInit {
 
   @Input() options: ScatterConfig;
 
-  public instance;
+  public instance: Scatter;
 
   constructor(
     private elementRef: ElementRef
@@ -17,8 +17,7 @@ export class G2plotScatterDirective implements AfterViewInit {
 
   ngAfterViewInit(): void {
     const hostElement = this.elementRef.nativeElement;
-    const stark = this;
-    this.instance = new Scatter(hostElement, stark.options);
+    this.instance = new Scatter(hostElement, this.options);
     this.instance.render();
   }
 
@@ -27,7 +26,7 @@ export class G2plotScatterDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  changeData(newData): void {
+  changeData(newData: Array<object>): void {
     this.instance.changeData(newData);
   }
 

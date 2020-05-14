@@ -8,7 +8,7 @@ export class G2plotGroupedRoseDirective implements AfterViewInit {
 
   @Input() options: GroupedRoseConfig;
 
-  public instance;
+  public instance: GroupedRose;
 
   constructor(
     private elementRef: ElementRef
@@ -16,8 +16,7 @@ export class G2plotGroupedRoseDirective implements AfterViewInit {
 
   ngAfterViewInit(): void {
     const hostElement = this.elementRef.nativeElement;
-    const stark = this;
-    this.instance = new GroupedRose(hostElement, stark.options);
+    this.instance = new GroupedRose(hostElement, this.options);
     this.instance.render();
   }
 
@@ -26,7 +25,7 @@ export class G2plotGroupedRoseDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  changeData(newData): void {
+  changeData(newData: Array<object>): void {
     this.instance.changeData(newData);
   }
 

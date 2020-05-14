@@ -8,7 +8,7 @@ export class G2plotDonutDirective implements AfterViewInit {
 
   @Input() options: DonutConfig;
 
-  public instance;
+  public instance: Donut;
 
   constructor(
     private elementRef: ElementRef
@@ -16,8 +16,7 @@ export class G2plotDonutDirective implements AfterViewInit {
 
   ngAfterViewInit(): void {
     const hostElement = this.elementRef.nativeElement;
-    const stark = this;
-    this.instance = new Donut(hostElement, stark.options);
+    this.instance = new Donut(hostElement, this.options);
     this.instance.render();
   }
 
@@ -26,7 +25,7 @@ export class G2plotDonutDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  changeData(newData): void {
+  changeData(newData: Array<object>): void {
     this.instance.changeData(newData);
   }
 

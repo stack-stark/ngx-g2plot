@@ -8,7 +8,7 @@ export class G2plotStackedAreaDirective implements AfterViewInit {
 
   @Input() options: StackedAreaConfig;
 
-  public instance;
+  public instance: StackedArea;
 
   constructor(
     private elementRef: ElementRef
@@ -16,8 +16,7 @@ export class G2plotStackedAreaDirective implements AfterViewInit {
 
   ngAfterViewInit(): void {
     const hostElement = this.elementRef.nativeElement;
-    const stark = this;
-    this.instance = new StackedArea(hostElement, stark.options);
+    this.instance = new StackedArea(hostElement, this.options);
     this.instance.render();
   }
 
@@ -26,7 +25,7 @@ export class G2plotStackedAreaDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  changeData(newData): void {
+  changeData(newData: Array<object>): void {
     this.instance.changeData(newData);
   }
 

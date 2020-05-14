@@ -8,7 +8,7 @@ export class G2plotLiquidDirective implements AfterViewInit {
 
   @Input() options: LiquidConfig;
 
-  public instance;
+  public instance: Liquid;
 
   constructor(
     private elementRef: ElementRef
@@ -16,8 +16,7 @@ export class G2plotLiquidDirective implements AfterViewInit {
 
   ngAfterViewInit(): void {
     const hostElement = this.elementRef.nativeElement;
-    const stark = this;
-    this.instance = new Liquid(hostElement, stark.options);
+    this.instance = new Liquid(hostElement, this.options);
     this.instance.render();
   }
 
@@ -26,7 +25,7 @@ export class G2plotLiquidDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  changeData(newData): void {
+  changeData(newData: Array<object>): void {
     this.instance.changeData(newData);
   }
 

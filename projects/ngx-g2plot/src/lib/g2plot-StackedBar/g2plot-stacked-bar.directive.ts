@@ -9,7 +9,7 @@ export class G2plotStackedBarDirective implements AfterViewInit {
 
   @Input() options: StackedBarConfig;
 
-  public instance;
+  public instance: StackedBar;
 
   constructor(
     private elementRef: ElementRef
@@ -17,8 +17,7 @@ export class G2plotStackedBarDirective implements AfterViewInit {
 
   ngAfterViewInit(): void {
     const hostElement = this.elementRef.nativeElement;
-    const stark = this;
-    this.instance = new StackedBar(hostElement, stark.options);
+    this.instance = new StackedBar(hostElement, this.options);
     this.instance.render();
   }
 
@@ -27,7 +26,7 @@ export class G2plotStackedBarDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  changeData(newData): void {
+  changeData(newData: Array<object>): void {
     this.instance.changeData(newData);
   }
 

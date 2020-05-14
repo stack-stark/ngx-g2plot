@@ -8,7 +8,7 @@ export class G2plotBulletDirective implements AfterViewInit {
 
   @Input() options: BulletConfig;
 
-  public instance;
+  public instance: Bullet;
 
   constructor(
     private elementRef: ElementRef
@@ -16,8 +16,7 @@ export class G2plotBulletDirective implements AfterViewInit {
 
   ngAfterViewInit(): void {
     const hostElement = this.elementRef.nativeElement;
-    const stark = this;
-    this.instance = new Bullet(hostElement, stark.options);
+    this.instance = new Bullet(hostElement, this.options);
     this.instance.render();
   }
 
@@ -26,7 +25,7 @@ export class G2plotBulletDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  changeData(newData): void {
+  changeData(newData: Array<object>): void {
     this.instance.changeData(newData);
   }
 

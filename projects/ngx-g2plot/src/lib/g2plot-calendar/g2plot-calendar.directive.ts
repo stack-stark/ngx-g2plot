@@ -8,7 +8,7 @@ export class G2plotCalendarDirective implements AfterViewInit {
 
   @Input() options: CalendarConfig;
 
-  public instance;
+  public instance: Calendar;
 
   constructor(
     private elementRef: ElementRef
@@ -16,8 +16,7 @@ export class G2plotCalendarDirective implements AfterViewInit {
 
   ngAfterViewInit(): void {
     const hostElement = this.elementRef.nativeElement;
-    const stark = this;
-    this.instance = new Calendar(hostElement, stark.options);
+    this.instance = new Calendar(hostElement, this.options);
     this.instance.render();
   }
 
@@ -26,7 +25,7 @@ export class G2plotCalendarDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  changeData(newData): void {
+  changeData(newData: Array<object>): void {
     this.instance.changeData(newData);
   }
 

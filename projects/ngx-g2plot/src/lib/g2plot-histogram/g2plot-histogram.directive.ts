@@ -8,7 +8,7 @@ export class G2plotHistogramDirective implements AfterViewInit {
 
   @Input() options: HistogramConfig;
 
-  public instance;
+  public instance: Histogram;
 
   constructor(
     private elementRef: ElementRef
@@ -16,8 +16,7 @@ export class G2plotHistogramDirective implements AfterViewInit {
 
   ngAfterViewInit(): void {
     const hostElement = this.elementRef.nativeElement;
-    const stark = this;
-    this.instance = new Histogram(hostElement, stark.options);
+    this.instance = new Histogram(hostElement, this.options);
     this.instance.render();
   }
 
@@ -26,7 +25,7 @@ export class G2plotHistogramDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  changeData(newData): void {
+  changeData(newData: Array<object>): void {
     this.instance.changeData(newData);
   }
 

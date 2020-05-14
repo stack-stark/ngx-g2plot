@@ -8,7 +8,7 @@ export class G2plotRangeColumnDirective implements AfterViewInit {
 
   @Input() options: RangeColumnConfig;
 
-  public instance;
+  public instance: RangeColumn;
 
   constructor(
     private elementRef: ElementRef
@@ -16,8 +16,7 @@ export class G2plotRangeColumnDirective implements AfterViewInit {
 
   ngAfterViewInit(): void {
     const hostElement = this.elementRef.nativeElement;
-    const stark = this;
-    this.instance = new RangeColumn(hostElement, stark.options);
+    this.instance = new RangeColumn(hostElement, this.options);
     this.instance.render();
   }
 
@@ -26,7 +25,7 @@ export class G2plotRangeColumnDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  changeData(newData): void {
+  changeData(newData: Array<object>): void {
     this.instance.changeData(newData);
   }
 

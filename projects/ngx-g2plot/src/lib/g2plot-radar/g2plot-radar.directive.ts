@@ -8,7 +8,7 @@ export class G2plotRadarDirective implements AfterViewInit {
 
   @Input() options: RadarConfig;
 
-  public instance;
+  public instance: Radar;
 
   constructor(
     private elementRef: ElementRef
@@ -16,8 +16,7 @@ export class G2plotRadarDirective implements AfterViewInit {
 
   ngAfterViewInit(): void {
     const hostElement = this.elementRef.nativeElement;
-    const stark = this;
-    this.instance = new Radar(hostElement, stark.options);
+    this.instance = new Radar(hostElement, this.options);
     this.instance.render();
   }
 
@@ -26,7 +25,7 @@ export class G2plotRadarDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  changeData(newData): void {
+  changeData(newData: Array<object>): void {
     this.instance.changeData(newData);
   }
 
