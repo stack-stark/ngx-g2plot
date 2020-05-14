@@ -1,7 +1,7 @@
-# 关于--about
-angular的g2plot封装,方便使用
+## 关于--about
+angular的g2plot封装,方便使用--Angular's g2plot package is easy to use
 
-# 安装--Install
+## 安装--Install
 
 ``` bash
 npm install --save @antv/g2plot ngx-g2plot
@@ -9,7 +9,7 @@ npm install --save @antv/g2plot ngx-g2plot
 yarn add @antv/g2plot ngx-g2plot
 ```
 
-# 使用--Usage
+## 使用--Usage
 
 #### line.component.html
 ``` html
@@ -116,7 +116,7 @@ import { NgxG2plotModule } from 'ngx-g2plot';
 })
 export class G2plotDemoModule { }
 ```
-# 提示 -- Tip
+## 提示 -- Tip
 我通过指定exportAs导出updateConfig、changeData、repaint、destroy这四种方法，以便您可以在任何时候更改图表。使用方法见上面
 
 如果你需要获取当前图表实例及其所有属性和方法,可使用this.xxx.instance,详细见上面的`updateConfig()`
@@ -125,7 +125,7 @@ I'm using exportAs  the deduced updateConfig, changeData, repaint, destroy the f
 
 If you need to get the current diagram instance and all its properties and methods, use this.xxx.instance. See `updateConfig()` above for details.
 
-# 所有指令列表 -- All Directive
+## 所有指令列表 -- All Directive
 
 指令名/Directive | 图表名 | exportAs
 -|-|-
@@ -160,15 +160,14 @@ starkG2plotGauge | Gauge - 仪表盘 | g2plotGauge
 starkG2plotLiquid | Liquid - 水波图 | g2plotLiquid
 starkG2plotWordClord | WordClord - 词云 | g2plotWordClord
 
-# g2plot官方文档地址 -- G2plot official document address
-https://g2plot.antv.vision/zh/docs/manual/plots/line
+## g2plot官方文档地址 -- G2plot official document address
+https://g2plot.antv.vision/zh/docs/manual/introduction
 
-
-# 在线预览 -- Preview
+## 在线预览 -- Preview
 https://stack-stark.github.io/ngx-g2plot-preview-compiled/
 
-# 使用遇到了问题或者缺陷? -- Use has encountered a problem or defect?
-"https://github.com/stack-stark/ngx-g2plot/issues"
+## 使用遇到了问题或者缺陷? -- Use has encountered a problem or defect?
+https://github.com/stack-stark/ngx-g2plot/issues
 
-# License
+## License
 MIT
