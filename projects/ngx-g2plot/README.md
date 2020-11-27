@@ -29,8 +29,8 @@ import { G2plotLineDirective } from 'ngx-g2plot';
 export class LineComponent {
 
   constructor() { }
-
-  @ViewChild('divG2plotLine') divG2plotLine: G2plotLineDirective; //获取到指令对象 Gets to the instruction object
+  //获取到指令对象 Gets to the instruction object
+  @ViewChild('divG2plotLine') divG2plotLine: G2plotLineDirective;
 
   data = [
     { year: '1991', value: 3 },
@@ -71,8 +71,9 @@ export class LineComponent {
       xField: 'year',
       yField: 'value',
     };
-    this.divG2plotLine.instance.updateConfig(options); //使用当前实例方法 Use the current instance method
-    this.divG2plotLine.instance.render(); //使用当前实例方法 Use the current instance method
+    //使用当前实例方法 Use the current instance method
+    this.divG2plotLine.instance.updateConfig(options);
+    this.divG2plotLine.instance.render();
   }
 
   changeData(): void {
@@ -117,13 +118,13 @@ import { NgxG2plotModule } from 'ngx-g2plot';
 export class G2plotDemoModule { }
 ```
 ## 提示 -- Tip
-我通过指定exportAs导出updateConfig、changeData、repaint、destroy这四种方法，以便您可以在任何时候更改图表。使用方法见上面
+我通过指定exportAs导出`updateConfig()、changeData()、repaint()、destroy()`这四种方法，以便您可以在任何时候更改图表。使用方法见上面
 
-如果你需要获取当前图表实例及其所有属性和方法,可使用this.xxx.instance,详细见上面的`updateConfig()`
+如果你需要获取当前图表实例及其所有属性和方法,可使用`this.xxx.instance`,详细见上面的`updateConfig()`
 
-I'm using exportAs  the deduced updateConfig, changeData, repaint, destroy the four methods, so that you can at any time to change chart.
+I'm using exportAs  the deduced `updateConfig(), changeData(), repaint(), destroy()` the four methods, so that you can at any time to change chart.
 
-If you need to get the current diagram instance and all its properties and methods, use this.xxx.instance. See `updateConfig()` above for details.
+If you need to get the current diagram instance and all its properties and methods, use `this.xxx.instance`. See `updateConfig()` above for details.
 
 ## 所有指令列表 -- All Directive
 
