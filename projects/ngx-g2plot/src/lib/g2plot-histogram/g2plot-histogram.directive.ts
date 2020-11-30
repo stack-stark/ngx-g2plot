@@ -1,12 +1,12 @@
 import { Directive, ElementRef, Input, AfterViewInit } from '@angular/core';
-import { Histogram, HistogramConfig } from '@antv/g2plot';
+import { Histogram, HistogramOptions } from '@antv/g2plot';
 @Directive({
   selector: '[starkG2plotHistogram]',
   exportAs: 'g2plotHistogram'
 })
 export class G2plotHistogramDirective implements AfterViewInit {
 
-  @Input() options: HistogramConfig;
+  @Input() options: HistogramOptions;
 
   public instance: Histogram;
 
@@ -20,8 +20,8 @@ export class G2plotHistogramDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  updateConfig(options: HistogramConfig): void {
-    this.instance.updateConfig(options);
+  update(options: HistogramOptions): void {
+    this.instance.update(options);
     this.instance.render();
   }
 
@@ -29,9 +29,7 @@ export class G2plotHistogramDirective implements AfterViewInit {
     this.instance.changeData(newData);
   }
 
-  repaint(): void {
-    this.instance.repaint();
-  }
+  
 
   destroy(): void {
     this.instance.destroy();

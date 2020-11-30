@@ -1,12 +1,12 @@
 import { Directive, ElementRef, Input, AfterViewInit } from '@angular/core';
-import { Gauge, GaugeConfig } from '@antv/g2plot';
+import { Gauge, GaugeOptions } from '@antv/g2plot';
 @Directive({
   selector: '[starkG2plotGauge]',
   exportAs: 'g2plotGauge'
 })
 export class G2plotGaugeDirective implements AfterViewInit {
 
-  @Input() options: GaugeConfig;
+  @Input() options: GaugeOptions;
 
   public instance: Gauge;
 
@@ -20,8 +20,8 @@ export class G2plotGaugeDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  updateConfig(options: GaugeConfig): void {
-    this.instance.updateConfig(options);
+  update(options: GaugeOptions): void {
+    this.instance.update(options);
     this.instance.render();
   }
 
@@ -29,9 +29,7 @@ export class G2plotGaugeDirective implements AfterViewInit {
     this.instance.changeData(newData);
   }
 
-  repaint(): void {
-    this.instance.repaint();
-  }
+  
 
   destroy(): void {
     this.instance.destroy();

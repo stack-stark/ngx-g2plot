@@ -1,12 +1,12 @@
 import { Directive, ElementRef, Input, AfterViewInit } from '@angular/core';
-import { Column, ColumnConfig } from '@antv/g2plot';
+import { Column, ColumnOptions } from '@antv/g2plot';
 @Directive({
   selector: '[starkG2plotColumn]',
   exportAs: 'g2plotColumn'
 })
 export class G2plotColumnDirective implements AfterViewInit {
 
-  @Input() options: ColumnConfig;
+  @Input() options: ColumnOptions;
 
   public instance: Column;
 
@@ -20,8 +20,8 @@ export class G2plotColumnDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  updateConfig(options: ColumnConfig): void {
-    this.instance.updateConfig(options);
+  update(options: ColumnOptions): void {
+    this.instance.update(options);
     this.instance.render();
   }
 
@@ -29,9 +29,7 @@ export class G2plotColumnDirective implements AfterViewInit {
     this.instance.changeData(newData);
   }
 
-  repaint(): void {
-    this.instance.repaint();
-  }
+  
 
   destroy(): void {
     this.instance.destroy();

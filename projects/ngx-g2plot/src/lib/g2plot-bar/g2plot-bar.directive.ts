@@ -1,12 +1,18 @@
+/*
+ * @Description: 
+ * @Date: 2020-11-27 10:07:48
+ * @LastEditors: tanmh
+ * @LastEditTime: 2020-11-30 17:02:21
+ */
 import { Directive, ElementRef, Input, AfterViewInit } from '@angular/core';
-import { Bar, BarConfig } from '@antv/g2plot';
+import { Bar, BarOptions } from '@antv/g2plot';
 @Directive({
   selector: '[starkG2plotBar]',
   exportAs: 'g2plotBar'
 })
 export class G2plotBarDirective implements AfterViewInit {
 
-  @Input() options: BarConfig;
+  @Input() options: BarOptions;
 
   public instance: Bar;
 
@@ -20,17 +26,13 @@ export class G2plotBarDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  updateConfig(options: BarConfig): void {
-    this.instance.updateConfig(options);
+  update(options: BarOptions): void {
+    this.instance.update(options);
     this.instance.render();
   }
 
   changeData(newData: Array<object>): void {
     this.instance.changeData(newData);
-  }
-
-  repaint(): void {
-    this.instance.repaint();
   }
 
   destroy(): void {

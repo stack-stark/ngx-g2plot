@@ -1,12 +1,12 @@
 import { Directive, ElementRef, Input, AfterViewInit } from '@angular/core';
-import { StackedRose, StackedRoseConfig } from '@antv/g2plot';
+import { StackedRose, StackedRoseOptions } from '@antv/g2plot';
 @Directive({
   selector: '[starkG2plotStackedRose]',
   exportAs: 'g2plotStackedRose'
 })
 export class G2plotStackedRoseDirective implements AfterViewInit {
 
-  @Input() options: StackedRoseConfig;
+  @Input() options: StackedRoseOptions;
 
   public instance: StackedRose;
 
@@ -20,8 +20,8 @@ export class G2plotStackedRoseDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  updateConfig(options: StackedRoseConfig): void {
-    this.instance.updateConfig(options);
+  update(options: StackedRoseOptions): void {
+    this.instance.update(options);
     this.instance.render();
   }
 
@@ -29,9 +29,7 @@ export class G2plotStackedRoseDirective implements AfterViewInit {
     this.instance.changeData(newData);
   }
 
-  repaint(): void {
-    this.instance.repaint();
-  }
+  
 
   destroy(): void {
     this.instance.destroy();

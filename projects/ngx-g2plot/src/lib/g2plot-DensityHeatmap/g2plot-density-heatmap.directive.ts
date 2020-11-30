@@ -1,12 +1,12 @@
 import { Directive, ElementRef, Input, AfterViewInit } from '@angular/core';
-import { DensityHeatmap, DensityHeatmapConfig } from '@antv/g2plot';
+import { DensityHeatmap, DensityHeatmapOptions } from '@antv/g2plot';
 @Directive({
   selector: '[starkG2plotDensityHeatmap]',
   exportAs: 'g2plotDensityHeatmap'
 })
 export class G2plotDensityHeatmapDirective implements AfterViewInit {
 
-  @Input() options: DensityHeatmapConfig;
+  @Input() options: DensityHeatmapOptions;
 
   public instance: DensityHeatmap;
 
@@ -20,8 +20,8 @@ export class G2plotDensityHeatmapDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  updateConfig(options: DensityHeatmapConfig): void {
-    this.instance.updateConfig(options);
+  update(options: DensityHeatmapOptions): void {
+    this.instance.update(options);
     this.instance.render();
   }
 
@@ -29,9 +29,7 @@ export class G2plotDensityHeatmapDirective implements AfterViewInit {
     this.instance.changeData(newData);
   }
 
-  repaint(): void {
-    this.instance.repaint();
-  }
+  
 
   destroy(): void {
     this.instance.destroy();

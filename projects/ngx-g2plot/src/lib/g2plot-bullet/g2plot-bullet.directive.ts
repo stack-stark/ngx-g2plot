@@ -1,12 +1,18 @@
+/*
+ * @Description: 
+ * @Date: 2020-11-27 10:07:48
+ * @LastEditors: tanmh
+ * @LastEditTime: 2020-11-30 17:24:11
+ */
 import { Directive, ElementRef, Input, AfterViewInit } from '@angular/core';
-import { Bullet, BulletConfig } from '@antv/g2plot';
+import { Bullet, BulletOptions } from '@antv/g2plot';
 @Directive({
   selector: '[starkG2plotBullet]',
   exportAs: 'g2plotBullet'
 })
 export class G2plotBulletDirective implements AfterViewInit {
 
-  @Input() options: BulletConfig;
+  @Input() options: BulletOptions;
 
   public instance: Bullet;
 
@@ -20,17 +26,13 @@ export class G2plotBulletDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  updateConfig(options: BulletConfig): void {
-    this.instance.updateConfig(options);
+  update(options: BulletOptions): void {
+    this.instance.update(options);
     this.instance.render();
   }
 
   changeData(newData: Array<object>): void {
     this.instance.changeData(newData);
-  }
-
-  repaint(): void {
-    this.instance.repaint();
   }
 
   destroy(): void {

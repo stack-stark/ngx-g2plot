@@ -1,12 +1,18 @@
+/*
+ * @Description: 
+ * @Date: 2020-11-27 10:07:48
+ * @LastEditors: tanmh
+ * @LastEditTime: 2020-11-30 17:23:55
+ */
 import { Directive, ElementRef, Input, AfterViewInit } from '@angular/core';
-import { StackedArea, StackedAreaConfig } from '@antv/g2plot';
+import { StackedArea, StackedAreaOptions } from '@antv/g2plot';
 @Directive({
   selector: '[starkG2plotStackedArea]',
   exportAs: 'g2plotStackedArea'
 })
 export class G2plotStackedAreaDirective implements AfterViewInit {
 
-  @Input() options: StackedAreaConfig;
+  @Input() options: StackedAreaOptions;
 
   public instance: StackedArea;
 
@@ -20,17 +26,13 @@ export class G2plotStackedAreaDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  updateConfig(options: StackedAreaConfig): void {
-    this.instance.updateConfig(options);
+  update(options: StackedAreaOptions): void {
+    this.instance.update(options);
     this.instance.render();
   }
 
   changeData(newData: Array<object>): void {
     this.instance.changeData(newData);
-  }
-
-  repaint(): void {
-    this.instance.repaint();
   }
 
   destroy(): void {

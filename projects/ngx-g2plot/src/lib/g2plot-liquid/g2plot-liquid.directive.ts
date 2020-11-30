@@ -1,12 +1,12 @@
 import { Directive, ElementRef, Input, AfterViewInit } from '@angular/core';
-import { Liquid, LiquidConfig } from '@antv/g2plot';
+import { Liquid, LiquidOptions } from '@antv/g2plot';
 @Directive({
   selector: '[starkG2plotLiquid]',
   exportAs: 'g2plotLiquid'
 })
 export class G2plotLiquidDirective implements AfterViewInit {
 
-  @Input() options: LiquidConfig;
+  @Input() options: LiquidOptions;
 
   public instance: Liquid;
 
@@ -20,8 +20,8 @@ export class G2plotLiquidDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  updateConfig(options: LiquidConfig): void {
-    this.instance.updateConfig(options);
+  update(options: LiquidOptions): void {
+    this.instance.update(options);
     this.instance.render();
   }
 
@@ -29,9 +29,7 @@ export class G2plotLiquidDirective implements AfterViewInit {
     this.instance.changeData(newData);
   }
 
-  repaint(): void {
-    this.instance.repaint();
-  }
+  
 
   destroy(): void {
     this.instance.destroy();

@@ -1,13 +1,19 @@
+/*
+ * @Description: 
+ * @Date: 2020-11-27 10:07:48
+ * @LastEditors: tanmh
+ * @LastEditTime: 2020-11-30 17:24:04
+ */
 
 import { Directive, ElementRef, Input, AfterViewInit } from '@angular/core';
-import { Bubble, BubbleConfig } from '@antv/g2plot';
+import { Bubble, BubbleOptions } from '@antv/g2plot';
 @Directive({
   selector: '[starkG2plotBubble]',
   exportAs: 'g2plotBubble'
 })
 export class G2plotBubbleDirective implements AfterViewInit {
 
-  @Input() options: BubbleConfig;
+  @Input() options: BubbleOptions;
 
   public instance: Bubble;
 
@@ -21,17 +27,13 @@ export class G2plotBubbleDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  updateConfig(options: BubbleConfig): void {
-    this.instance.updateConfig(options);
+  update(options: BubbleOptions): void {
+    this.instance.update(options);
     this.instance.render();
   }
 
   changeData(newData: Array<object>): void {
     this.instance.changeData(newData);
-  }
-
-  repaint(): void {
-    this.instance.repaint();
   }
 
   destroy(): void {

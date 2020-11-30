@@ -1,12 +1,18 @@
+/*
+ * @Description: 
+ * @Date: 2020-11-27 10:07:48
+ * @LastEditors: tanmh
+ * @LastEditTime: 2020-11-30 17:24:20
+ */
 import { Directive, ElementRef, Input, AfterViewInit } from '@angular/core';
-import { Calendar, CalendarConfig } from '@antv/g2plot';
+import { Calendar, CalendarOptions } from '@antv/g2plot';
 @Directive({
   selector: '[starkG2plotCalendar]',
   exportAs: 'g2plotCalendar'
 })
 export class G2plotCalendarDirective implements AfterViewInit {
 
-  @Input() options: CalendarConfig;
+  @Input() options: CalendarOptions;
 
   public instance: Calendar;
 
@@ -20,17 +26,13 @@ export class G2plotCalendarDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  updateConfig(options: CalendarConfig): void {
-    this.instance.updateConfig(options);
+  update(options: CalendarOptions): void {
+    this.instance.update(options);
     this.instance.render();
   }
 
   changeData(newData: Array<object>): void {
     this.instance.changeData(newData);
-  }
-
-  repaint(): void {
-    this.instance.repaint();
   }
 
   destroy(): void {

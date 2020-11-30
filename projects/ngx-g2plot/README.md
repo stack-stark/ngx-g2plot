@@ -58,7 +58,7 @@ export class LineComponent {
     yField: 'value',
   };
 
-  updateConfig(): void {
+  update(): void {
    const options = {
       title: {
         visible: true,
@@ -72,7 +72,7 @@ export class LineComponent {
       yField: 'value',
     };
     //使用当前实例方法 Use the current instance method
-    this.divG2plotLine.instance.updateConfig(options);
+    this.divG2plotLine.instance.update(options);
     this.divG2plotLine.instance.render();
   }
 
@@ -118,13 +118,13 @@ import { NgxG2plotModule } from 'ngx-g2plot';
 export class G2plotDemoModule { }
 ```
 ## 提示 -- Tip
-我通过指定exportAs导出`updateConfig()、changeData()、repaint()、destroy()`这四种方法，以便您可以在任何时候更改图表。使用方法见上面
+我通过指定exportAs导出`update()、changeData()、repaint()、destroy()`这四种方法，以便您可以在任何时候更改图表。使用方法见上面
 
-如果你需要获取当前图表实例及其所有属性和方法,可使用`this.xxx.instance`,详细见上面的`updateConfig()`
+如果你需要获取当前图表实例及其所有属性和方法,可使用`this.xxx.instance`,详细见上面的`update()`
 
-I'm using exportAs  the deduced `updateConfig(), changeData(), repaint(), destroy()` the four methods, so that you can at any time to change chart.
+I'm using exportAs  the deduced `update(), changeData(), repaint(), destroy()` the four methods, so that you can at any time to change chart.
 
-If you need to get the current diagram instance and all its properties and methods, use `this.xxx.instance`. See `updateConfig()` above for details.
+If you need to get the current diagram instance and all its properties and methods, use `this.xxx.instance`. See `update()` above for details.
 
 ## 所有指令列表 -- All Directive
 

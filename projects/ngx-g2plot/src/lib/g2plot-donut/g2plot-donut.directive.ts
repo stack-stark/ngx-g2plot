@@ -1,12 +1,12 @@
 import { Directive, ElementRef, Input, AfterViewInit } from '@angular/core';
-import { Donut, DonutConfig } from '@antv/g2plot';
+import { Donut, DonutOptions } from '@antv/g2plot';
 @Directive({
   selector: '[starkG2plotDonut]',
   exportAs: 'g2plotDonut'
 })
 export class G2plotDonutDirective implements AfterViewInit {
 
-  @Input() options: DonutConfig;
+  @Input() options: DonutOptions;
 
   public instance: Donut;
 
@@ -20,8 +20,8 @@ export class G2plotDonutDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  updateConfig(options: DonutConfig): void {
-    this.instance.updateConfig(options);
+  update(options: DonutOptions): void {
+    this.instance.update(options);
     this.instance.render();
   }
 
@@ -29,9 +29,7 @@ export class G2plotDonutDirective implements AfterViewInit {
     this.instance.changeData(newData);
   }
 
-  repaint(): void {
-    this.instance.repaint();
-  }
+  
 
   destroy(): void {
     this.instance.destroy();

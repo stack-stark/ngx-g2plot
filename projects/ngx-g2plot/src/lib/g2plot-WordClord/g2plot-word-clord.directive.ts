@@ -1,12 +1,12 @@
 import { Directive, ElementRef, Input, AfterViewInit } from '@angular/core';
-import { WordCloud, WordCloudConfig } from '@antv/g2plot';
+import { WordCloud, WordCloudOptions } from '@antv/g2plot';
 @Directive({
   selector: '[starkG2plotWordCloud]',
   exportAs: 'g2plotWordCloud'
 })
 export class G2plotWordCloudDirective implements AfterViewInit {
 
-  @Input() options: WordCloudConfig;
+  @Input() options: WordCloudOptions;
 
   public instance: WordCloud;
 
@@ -20,8 +20,8 @@ export class G2plotWordCloudDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  updateConfig(options: WordCloudConfig): void {
-    this.instance.updateConfig(options);
+  update(options: WordCloudOptions): void {
+    this.instance.update(options);
     this.instance.render();
   }
 
@@ -29,9 +29,7 @@ export class G2plotWordCloudDirective implements AfterViewInit {
     this.instance.changeData(newData);
   }
 
-  repaint(): void {
-    this.instance.repaint();
-  }
+  
 
   destroy(): void {
     this.instance.destroy();

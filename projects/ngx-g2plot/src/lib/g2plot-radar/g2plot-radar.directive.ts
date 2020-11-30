@@ -1,12 +1,12 @@
 import { Directive, ElementRef, Input, AfterViewInit } from '@angular/core';
-import { Radar, RadarConfig } from '@antv/g2plot';
+import { Radar, RadarOptions } from '@antv/g2plot';
 @Directive({
   selector: '[starkG2plotRadar]',
   exportAs: 'g2plotRadar'
 })
 export class G2plotRadarDirective implements AfterViewInit {
 
-  @Input() options: RadarConfig;
+  @Input() options: RadarOptions;
 
   public instance: Radar;
 
@@ -20,8 +20,8 @@ export class G2plotRadarDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  updateConfig(options: RadarConfig): void {
-    this.instance.updateConfig(options);
+  update(options: RadarOptions): void {
+    this.instance.update(options);
     this.instance.render();
   }
 
@@ -29,9 +29,7 @@ export class G2plotRadarDirective implements AfterViewInit {
     this.instance.changeData(newData);
   }
 
-  repaint(): void {
-    this.instance.repaint();
-  }
+  
 
   destroy(): void {
     this.instance.destroy();

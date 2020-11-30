@@ -1,12 +1,12 @@
 import { Directive, ElementRef, Input, AfterViewInit } from '@angular/core';
-import { Line, LineConfig } from '@antv/g2plot';
+import { Line, LineOptions } from '@antv/g2plot';
 @Directive({
   selector: '[starkG2plotLine]',
   exportAs: 'g2plotLine'
 })
 export class G2plotLineDirective implements AfterViewInit {
 
-  @Input() options: LineConfig;
+  @Input() options: LineOptions;
 
   public instance: Line;
 
@@ -20,8 +20,8 @@ export class G2plotLineDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  updateConfig(options: LineConfig): void {
-    this.instance.updateConfig(options);
+  update(options: LineOptions): void {
+    this.instance.update(options);
     this.instance.render();
   }
 
@@ -29,9 +29,7 @@ export class G2plotLineDirective implements AfterViewInit {
     this.instance.changeData(newData);
   }
 
-  repaint(): void {
-    this.instance.repaint();
-  }
+  
 
   destroy(): void {
     this.instance.destroy();

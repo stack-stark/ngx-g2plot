@@ -1,12 +1,12 @@
 import { Directive, ElementRef, Input, AfterViewInit } from '@angular/core';
-import { StepLine, StepLineConfig } from '@antv/g2plot';
+import { StepLine, StepLineOptions } from '@antv/g2plot';
 @Directive({
   selector: '[starkG2plotStepLine]',
   exportAs: 'g2plotStepLine'
 })
 export class G2plotStepLineDirective implements AfterViewInit {
 
-  @Input() options: StepLineConfig;
+  @Input() options: StepLineOptions;
 
   public instance: StepLine;
 
@@ -20,8 +20,8 @@ export class G2plotStepLineDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  updateConfig(options: StepLineConfig): void {
-    this.instance.updateConfig(options);
+  update(options: StepLineOptions): void {
+    this.instance.update(options);
     this.instance.render();
   }
 
@@ -29,9 +29,7 @@ export class G2plotStepLineDirective implements AfterViewInit {
     this.instance.changeData(newData);
   }
 
-  repaint(): void {
-    this.instance.repaint();
-  }
+  
 
   destroy(): void {
     this.instance.destroy();

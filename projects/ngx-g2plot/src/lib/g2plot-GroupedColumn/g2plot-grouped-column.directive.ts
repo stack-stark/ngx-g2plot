@@ -1,12 +1,12 @@
 import { Directive, ElementRef, Input, AfterViewInit } from '@angular/core';
-import { GroupedColumn, GroupedColumnConfig } from '@antv/g2plot';
+import { GroupedColumn, GroupedColumnOptions } from '@antv/g2plot';
 @Directive({
   selector: '[starkG2plotGroupedColumn]',
   exportAs: 'g2plotGroupedColumn'
 })
 export class G2plotGroupedColumnDirective implements AfterViewInit {
 
-  @Input() options: GroupedColumnConfig;
+  @Input() options: GroupedColumnOptions;
 
   public instance: GroupedColumn;
 
@@ -20,8 +20,8 @@ export class G2plotGroupedColumnDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  updateConfig(options: GroupedColumnConfig): void {
-    this.instance.updateConfig(options);
+  update(options: GroupedColumnOptions): void {
+    this.instance.update(options);
     this.instance.render();
   }
 
@@ -29,9 +29,7 @@ export class G2plotGroupedColumnDirective implements AfterViewInit {
     this.instance.changeData(newData);
   }
 
-  repaint(): void {
-    this.instance.repaint();
-  }
+  
 
   destroy(): void {
     this.instance.destroy();

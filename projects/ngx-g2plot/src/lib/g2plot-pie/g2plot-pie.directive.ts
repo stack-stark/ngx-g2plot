@@ -1,12 +1,12 @@
 import { Directive, ElementRef, Input, AfterViewInit } from '@angular/core';
-import { Pie, PieConfig } from '@antv/g2plot';
+import { Pie, PieOptions } from '@antv/g2plot';
 @Directive({
   selector: '[starkG2plotPie]',
   exportAs: 'g2plotPie'
 })
 export class G2plotPieDirective implements AfterViewInit {
 
-  @Input() options: PieConfig;
+  @Input() options: PieOptions;
 
   public instance: Pie;
 
@@ -20,8 +20,8 @@ export class G2plotPieDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  updateConfig(options: PieConfig): void {
-    this.instance.updateConfig(options);
+  update(options: PieOptions): void {
+    this.instance.update(options);
     this.instance.render();
   }
 
@@ -29,9 +29,7 @@ export class G2plotPieDirective implements AfterViewInit {
     this.instance.changeData(newData);
   }
 
-  repaint(): void {
-    this.instance.repaint();
-  }
+  
 
   destroy(): void {
     this.instance.destroy();

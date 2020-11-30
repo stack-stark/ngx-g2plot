@@ -1,12 +1,18 @@
+/*
+ * @Description: 
+ * @Date: 2020-11-27 10:07:48
+ * @LastEditors: tanmh
+ * @LastEditTime: 2020-11-30 17:23:32
+ */
 import { Directive, ElementRef, Input, AfterViewInit } from '@angular/core';
-import { Area, AreaConfig } from '@antv/g2plot';
+import { Area, AreaOptions } from '@antv/g2plot';
 @Directive({
   selector: '[starkG2plotArea]',
   exportAs: 'g2plotArea'
 })
 export class G2plotAreaDirective implements AfterViewInit {
 
-  @Input() options: AreaConfig;
+  @Input() options: AreaOptions;
 
   public instance: Area;
 
@@ -20,17 +26,13 @@ export class G2plotAreaDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  updateConfig(options: AreaConfig): void {
-    this.instance.updateConfig(options);
+  update(options: AreaOptions): void {
+    this.instance.update(options);
     this.instance.render();
   }
 
   changeData(newData: Array<object>): void {
     this.instance.changeData(newData);
-  }
-
-  repaint(): void {
-    this.instance.repaint();
   }
 
   destroy(): void {

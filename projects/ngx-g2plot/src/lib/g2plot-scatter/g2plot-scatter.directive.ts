@@ -1,13 +1,13 @@
 
 import { Directive, ElementRef, Input, AfterViewInit } from '@angular/core';
-import { Scatter, ScatterConfig } from '@antv/g2plot';
+import { Scatter, ScatterOptions } from '@antv/g2plot';
 @Directive({
   selector: '[starkG2plotScatter]',
   exportAs: 'g2plotScatter'
 })
 export class G2plotScatterDirective implements AfterViewInit {
 
-  @Input() options: ScatterConfig;
+  @Input() options: ScatterOptions;
 
   public instance: Scatter;
 
@@ -21,8 +21,8 @@ export class G2plotScatterDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  updateConfig(options: ScatterConfig): void {
-    this.instance.updateConfig(options);
+  update(options: ScatterOptions): void {
+    this.instance.update(options);
     this.instance.render();
   }
 
@@ -30,9 +30,7 @@ export class G2plotScatterDirective implements AfterViewInit {
     this.instance.changeData(newData);
   }
 
-  repaint(): void {
-    this.instance.repaint();
-  }
+  
 
   destroy(): void {
     this.instance.destroy();

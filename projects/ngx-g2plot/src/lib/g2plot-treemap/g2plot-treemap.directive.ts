@@ -1,12 +1,12 @@
 import { Directive, ElementRef, Input, AfterViewInit } from '@angular/core';
-import { Treemap, TreemapConfig } from '@antv/g2plot';
+import { Treemap, TreemapOptions } from '@antv/g2plot';
 @Directive({
   selector: '[starkG2plotTreemap]',
   exportAs: 'g2plotTreemap'
 })
 export class G2plotTreemapDirective implements AfterViewInit {
 
-  @Input() options: TreemapConfig;
+  @Input() options: TreemapOptions;
 
   public instance: Treemap;
 
@@ -20,8 +20,8 @@ export class G2plotTreemapDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  updateConfig(options: TreemapConfig): void {
-    this.instance.updateConfig(options);
+  update(options: TreemapOptions): void {
+    this.instance.update(options);
     this.instance.render();
   }
 
@@ -29,9 +29,7 @@ export class G2plotTreemapDirective implements AfterViewInit {
     this.instance.changeData(newData);
   }
 
-  repaint(): void {
-    this.instance.repaint();
-  }
+  
 
   destroy(): void {
     this.instance.destroy();

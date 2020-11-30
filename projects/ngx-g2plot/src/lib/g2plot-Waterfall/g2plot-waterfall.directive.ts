@@ -1,12 +1,12 @@
 import { Directive, ElementRef, Input, AfterViewInit } from '@angular/core';
-import { Waterfall, WaterfallConfig } from '@antv/g2plot';
+import { Waterfall, WaterfallOptions } from '@antv/g2plot';
 @Directive({
   selector: '[starkG2plotWaterfall]',
   exportAs: 'g2plotWaterfall'
 })
 export class G2plotWaterfallDirective implements AfterViewInit {
 
-  @Input() options: WaterfallConfig;
+  @Input() options: WaterfallOptions;
 
   public instance: Waterfall;
 
@@ -20,8 +20,8 @@ export class G2plotWaterfallDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  updateConfig(options: WaterfallConfig): void {
-    this.instance.updateConfig(options);
+  update(options: WaterfallOptions): void {
+    this.instance.update(options);
     this.instance.render();
   }
 
@@ -29,9 +29,7 @@ export class G2plotWaterfallDirective implements AfterViewInit {
     this.instance.changeData(newData);
   }
 
-  repaint(): void {
-    this.instance.repaint();
-  }
+  
 
   destroy(): void {
     this.instance.destroy();

@@ -1,12 +1,12 @@
 import { Directive, ElementRef, Input, AfterViewInit } from '@angular/core';
-import { StackedColumn, StackedColumnConfig } from '@antv/g2plot';
+import { StackedColumn, StackedColumnOptions } from '@antv/g2plot';
 @Directive({
   selector: '[starkG2plotStackedColumn]',
   exportAs: 'g2plotStackedColumn'
 })
 export class G2plotStackedColumnDirective implements AfterViewInit {
 
-  @Input() options: StackedColumnConfig;
+  @Input() options: StackedColumnOptions;
 
   public instance: StackedColumn;
 
@@ -20,8 +20,8 @@ export class G2plotStackedColumnDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  updateConfig(options: StackedColumnConfig): void {
-    this.instance.updateConfig(options);
+  update(options: StackedColumnOptions): void {
+    this.instance.update(options);
     this.instance.render();
   }
 
@@ -29,9 +29,7 @@ export class G2plotStackedColumnDirective implements AfterViewInit {
     this.instance.changeData(newData);
   }
 
-  repaint(): void {
-    this.instance.repaint();
-  }
+  
 
   destroy(): void {
     this.instance.destroy();

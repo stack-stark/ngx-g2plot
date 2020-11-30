@@ -1,12 +1,12 @@
 import { Directive, ElementRef, Input, AfterViewInit } from '@angular/core';
-import { RangeColumn, RangeColumnConfig } from '@antv/g2plot';
+import { RangeColumn, RangeColumnOptions } from '@antv/g2plot';
 @Directive({
   selector: '[starkG2plotRangeColumn]',
   exportAs: 'g2plotRangeColumn'
 })
 export class G2plotRangeColumnDirective implements AfterViewInit {
 
-  @Input() options: RangeColumnConfig;
+  @Input() options: RangeColumnOptions;
 
   public instance: RangeColumn;
 
@@ -20,8 +20,8 @@ export class G2plotRangeColumnDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  updateConfig(options: RangeColumnConfig): void {
-    this.instance.updateConfig(options);
+  update(options: RangeColumnOptions): void {
+    this.instance.update(options);
     this.instance.render();
   }
 
@@ -29,9 +29,7 @@ export class G2plotRangeColumnDirective implements AfterViewInit {
     this.instance.changeData(newData);
   }
 
-  repaint(): void {
-    this.instance.repaint();
-  }
+  
 
   destroy(): void {
     this.instance.destroy();

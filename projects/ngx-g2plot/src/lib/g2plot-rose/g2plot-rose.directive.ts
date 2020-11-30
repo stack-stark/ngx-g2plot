@@ -1,12 +1,12 @@
 import { Directive, ElementRef, Input, AfterViewInit } from '@angular/core';
-import { Rose, RoseConfig } from '@antv/g2plot';
+import { Rose, RoseOptions } from '@antv/g2plot';
 @Directive({
   selector: '[starkG2plotRose]',
   exportAs: 'g2plotRose'
 })
 export class G2plotRoseDirective implements AfterViewInit {
 
-  @Input() options: RoseConfig;
+  @Input() options: RoseOptions;
 
   public instance: Rose;
 
@@ -20,8 +20,8 @@ export class G2plotRoseDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  updateConfig(options: RoseConfig): void {
-    this.instance.updateConfig(options);
+  update(options: RoseOptions): void {
+    this.instance.update(options);
     this.instance.render();
   }
 
@@ -29,9 +29,7 @@ export class G2plotRoseDirective implements AfterViewInit {
     this.instance.changeData(newData);
   }
 
-  repaint(): void {
-    this.instance.repaint();
-  }
+  
 
   destroy(): void {
     this.instance.destroy();

@@ -1,12 +1,12 @@
 import { Directive, ElementRef, Input, AfterViewInit } from '@angular/core';
-import { Heatmap, HeatmapConfig } from '@antv/g2plot';
+import { Heatmap, HeatmapOptions } from '@antv/g2plot';
 @Directive({
   selector: '[starkG2plotHeatmap]',
   exportAs: 'g2plotHeatmap'
 })
 export class G2plotHeatmapDirective implements AfterViewInit {
 
-  @Input() options: HeatmapConfig;
+  @Input() options: HeatmapOptions;
 
   public instance: Heatmap;
 
@@ -20,8 +20,8 @@ export class G2plotHeatmapDirective implements AfterViewInit {
     this.instance.render();
   }
 
-  updateConfig(options: HeatmapConfig): void {
-    this.instance.updateConfig(options);
+  update(options: HeatmapOptions): void {
+    this.instance.update(options);
     this.instance.render();
   }
 
@@ -29,9 +29,7 @@ export class G2plotHeatmapDirective implements AfterViewInit {
     this.instance.changeData(newData);
   }
 
-  repaint(): void {
-    this.instance.repaint();
-  }
+  
 
   destroy(): void {
     this.instance.destroy();
