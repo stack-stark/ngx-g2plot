@@ -29,8 +29,6 @@ export class G2plotHeatmapDirective implements AfterViewInit {
     this.instance.changeData(newData);
   }
 
-  
-
   destroy(): void {
     this.instance.destroy();
   }

@@ -30,8 +30,6 @@ export class G2plotScatterDirective implements AfterViewInit {
     this.instance.changeData(newData);
   }
 
-  
-
   destroy(): void {
     this.instance.destroy();
   }

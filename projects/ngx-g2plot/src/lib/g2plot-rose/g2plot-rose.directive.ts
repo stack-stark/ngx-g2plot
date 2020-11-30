@@ -1,3 +1,9 @@
+/*
+ * @Description: 
+ * @Date: 2020-11-27 10:07:48
+ * @LastEditors: tanmh
+ * @LastEditTime: 2020-11-30 18:02:57
+ */
 import { Directive, ElementRef, Input, AfterViewInit } from '@angular/core';
 import { Rose, RoseOptions } from '@antv/g2plot';
 @Directive({
@@ -28,8 +34,6 @@ export class G2plotRoseDirective implements AfterViewInit {
   changeData(newData: Array<object>): void {
     this.instance.changeData(newData);
   }
-
-  
 
   destroy(): void {
     this.instance.destroy();
