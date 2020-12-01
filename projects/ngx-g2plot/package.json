@@ -5,7 +5,7 @@
     "@angular/common": "^9.0.7",
     "@angular/core": "^9.0.7",
     "tslib": "^1.10.0",
-    "@antv/g2plot": "^1.1.0"
+    "@antv/g2plot": "^2.2.13"
   },
   "description": "angular的g2plot封装,方便使用--Angular's g2plot package is easy to use",
   "repository": {

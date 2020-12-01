@@ -71,9 +71,7 @@ export class LineComponent {
       xField: 'year',
       yField: 'value',
     };
-    //使用当前实例方法 Use the current instance method
-    this.divG2plotLine.instance.update(options);
-    this.divG2plotLine.instance.render();
+    this.divG2plotLine.update(options);
   }
 
   changeData(): void {
@@ -91,14 +89,15 @@ export class LineComponent {
     this.divG2plotLine.changeData(data);
   }
 
-  repaint(): void {
-    this.divG2plotLine.repaint();
-  }
 
   destroy(): void {
     this.divG2plotLine.destroy();
   }
 
+  changeSize(): void {
+    //使用当前实例方法 Use the current instance method
+    this.divG2plotLine.instance.changeSize(300, 300);
+  }
 }
 
 ```
@@ -106,25 +105,25 @@ export class LineComponent {
 ``` ts
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NgxG2plotModule } from 'ngx-g2plot';
+import { G2plotLineModule } from 'ngx-g2plot';
 
 @NgModule({
   declarations: [G2plotDemoComponent],
   imports: [
     CommonModule,
-    NgxG2plotModule
+    G2plotLineModule
   ]
 })
 export class G2plotDemoModule { }
 ```
 ## 提示 -- Tip
-我通过指定exportAs导出`update()、changeData()、repaint()、destroy()`这四种方法，以便您可以在任何时候更改图表。使用方法见上面
+我通过指定exportAs导出`update()、changeData()、destroy()`这四种方法，以便您可以在任何时候更改图表。使用方法见上面
 
-如果你需要获取当前图表实例及其所有属性和方法,可使用`this.xxx.instance`,详细见上面的`update()`
+如果你需要获取当前图表实例及其所有属性和方法,可使用`this.xxx.instance`,详细见上面的`changeSize()`
 
-I'm using exportAs  the deduced `update(), changeData(), repaint(), destroy()` the four methods, so that you can at any time to change chart.
+I'm using exportAs  the deduced `update(), changeData(), destroy()` the four methods, so that you can at any time to change chart.
 
-If you need to get the current diagram instance and all its properties and methods, use `this.xxx.instance`. See `update()` above for details.
+If you need to get the current diagram instance and all its properties and methods, use `this.xxx.instance`. See `changeSize()` above for details.
 
 ## 所有指令列表 -- All Directive
 
