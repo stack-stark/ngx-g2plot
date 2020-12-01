@@ -2,27 +2,13 @@
  * @Description: 导出所有module
  * @Date: 2020-05-12 15:15:01
  * @LastEditors: tanmh
- * @LastEditTime: 2020-12-01 16:37:49
+ * @LastEditTime: 2020-12-01 17:30:45
  */
-// export * from './g2plot-area';
-// export * from './g2plot-line';
-// export * from './g2plot-bar';
-// export * from './g2plot-column';
-// export * from './g2plot-gauge';
-// export * from './g2plot-line';
-// export * from './g2plot-pie';
-// export * from './g2plot-Waterfall';
-// export * from './g2plot-rose';
-// export * from './g2plot-scatter';
-// export * from './g2plot-heatmap';
-// export * from './g2plot-bullet';
-// export * from './g2plot-liquid';
-// export * from './g2plot-histogram';
-// export * from './g2plot-radar';
 
 export * from './g2plot-bar/g2plot-bar.module';
 export * from './g2plot-bullet/g2plot-bullet.module';
 export * from './g2plot-column/g2plot-column.module';
+export * from './g2plot-dual-axes/g2plot-dual-axes.module';
 export * from './g2plot-gauge/g2plot-gauge.module';
 export * from './g2plot-heatmap/g2plot-heatmap.module';
 export * from './g2plot-histogram/g2plot-histogram.module';
@@ -37,6 +23,7 @@ export * from './g2plot-word-cloud/g2plot-word-cloud.module';
 
 export * from './g2plot-bar/g2plot-bar.directive';
 export * from './g2plot-column/g2plot-column.directive';
+export * from './g2plot-dual-axes/g2plot-dual-axes.directive';
 export * from './g2plot-gauge/g2plot-gauge.directive';
 export * from './g2plot-line/g2plot-line.directive';
 export * from './g2plot-pie/g2plot-pie.directive';
