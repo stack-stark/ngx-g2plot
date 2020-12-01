@@ -6,5 +6,6 @@
     "umdModuleIds": {
       "@antv/g2plot": "@antv/g2plot"
     }
-  }
+  },
+  "whitelistedNonPeerDependencies": ["@antv/g2plot"]
 }

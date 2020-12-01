@@ -2,7 +2,7 @@
  * @Description: Line图表指令
  * @Date: 2020-11-27 10:07:48
  * @LastEditors: tanmh
- * @LastEditTime: 2020-12-01 10:53:15
+ * @LastEditTime: 2020-12-01 14:27:00
  */
 import { Directive, ElementRef, Input, AfterViewInit } from '@angular/core';
 import { Line, LineOptions } from '@antv/g2plot';

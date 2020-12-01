@@ -2,7 +2,7 @@
  * @Description:
  * @Date: 2020-12-01 10:46:00
  * @LastEditors: tanmh
- * @LastEditTime: 2020-12-01 11:13:11
+ * @LastEditTime: 2020-12-01 13:53:22
  */
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
