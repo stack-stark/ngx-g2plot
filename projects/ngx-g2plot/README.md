@@ -1,6 +1,24 @@
 ## 关于--about
 angular的g2plot封装,方便使用--Angular's g2plot package is easy to use
 
+# github
+https://github.com/stack-stark/ngx-g2plot
+
+# 2.0.0修改如下
+
+1.升级angular版本至11,
+
+2.升级g2plot至V2
+
+3.更改为按需加载
+
+4.删除g2plot不再支持的方法和图表导出
+
+
+# 重要提示 -- Important note
+
+g2plot在v2版本去除了一部分图表,修改了实现方法,故本封装跟进,与g2plot保持一致,具体见官方文档说明: https://g2plot.antv.vision/zh/docs/manual/upgrade
+
 ## 安装--Install
 
 ``` bash
@@ -30,7 +48,7 @@ export class LineComponent {
 
   constructor() { }
   //获取到指令对象 Gets to the instruction object
-  @ViewChild('divG2plotLine') divG2plotLine: G2plotLineDirective;
+  @ViewChild('divG2plotLine') divG2plotLine!: G2plotLineDirective;
 
   data = [
     { year: '1991', value: 3 },
@@ -117,55 +135,44 @@ import { G2plotLineModule } from 'ngx-g2plot';
 export class G2plotDemoModule { }
 ```
 ## 提示 -- Tip
-我通过指定exportAs导出`update()、changeData()、destroy()`这四种方法，以便您可以在任何时候更改图表。使用方法见上面
+我通过指定exportAs导出`update()、changeData()、destroy()`这三种方法，以便您可以在任何时候更改图表。使用方法见上面
 
-如果你需要获取当前图表实例及其所有属性和方法,可使用`this.xxx.instance`,详细见上面的`changeSize()`
+如果你需要获取当前图表实例及其所有属性和方法,可使用`this.xxx.instance`,参考见上面的`changeSize()`
 
-I'm using exportAs  the deduced `update(), changeData(), destroy()` the four methods, so that you can at any time to change chart.
+图表所有方法见官方文档: https://g2plot.antv.vision/zh/docs/manual/plot-api
+
+I'm using exportAs  the deduced `update(), changeData(), destroy()` the three methods, so that you can at any time to change chart.
 
 If you need to get the current diagram instance and all its properties and methods, use `this.xxx.instance`. See `changeSize()` above for details.
 
+See the official documentation for all methods of charting: https://g2plot.antv.vision/zh/docs/manual/plot-api
+
 ## 所有指令列表 -- All Directive
 
-指令名/Directive | 图表名 | exportAs
--|-|-
-starkG2plotLine | Line - 折线图 | g2plotLine
-starkG2plotArea | Area - 面积图 | g2plotArea
-starkG2plotStepLine | StepLine - 阶梯折图  | g2plotStepLine
-starkG2plotStackedArea | StackedArea - 堆叠面积图  | g2plotStackedArea
-starkG2plotColumn | Column - 柱状图  | g2plotColumn
-starkG2plotStackedColumn | StackedColumn - 堆叠柱状图  | g2plotStackedColumn
-starkG2plotGroupedColumn | GroupedColumn - 分组柱状图  | g2plotGroupedColumn
-starkG2plotRangeColumn | RangeColumn - 区间柱状图  | g2plotRangeColumn
-starkG2plotHistogram | Histogram - 直方图  | g2plotHistogram
-starkG2plotWaterfall | Waterfall - 瀑布图  | g2plotWaterfall
-starkG2plotBar | Bar - 基础条形图  | g2plotBar
-starkG2plotStackedBar | StackedBar - 堆叠条形图  | g2plotStackedBar
-starkG2plotGroupedBar | GroupedBar - 分组条形图  | g2plotGroupedBar
-starkG2plotRangeBar | RangeBar - 区间条形图  | g2plotRangeBar
-starkG2plotPie | Pie - 饼图  | g2plotPie
-starkG2plotDonut | Donut - 环图  | g2plotDonut
-starkG2plotRose | Rose - 玫瑰图  | g2plotRose
-starkG2plotStackedRose | StackedRose - 堆叠玫瑰图 | g2plotStackedRose
-starkG2plotGroupedRose | GroupedRose - 分组玫瑰图 | g2plotGroupedRose
-starkG2plotRadar | Radar - 雷达图 | g2plotRadar
-starkG2plotScatter | Scatter - 散点图 | g2plotScatter
-starkG2plotBubble | Bubble - 气泡图 | g2plotBubble
-starkG2plotHeatmap | Heatmap - 热力图 | g2plotHeatmap
-starkG2plotDensityHeatmap | DensityHeatmap - 密度热力图 | g2plotDensityHeatmap
-starkG2plotTreemap | Treemap - 矩形树图 | g2plotTreemap
-starkG2plotCalendar | Calendar - 日历图 | g2plotCalendar
-starkG2plotBullet | Bullet - 子弹图 | g2plotBullet
-starkG2plotGauge | Gauge - 仪表盘 | g2plotGauge
-starkG2plotLiquid | Liquid - 水波图 | g2plotLiquid
-starkG2plotWordClord | WordClord - 词云 | g2plotWordClord
+指令名/Directive | 图表名 | exportAs | Module
+-|-|-|-
+starkG2plotArea | Area - 面积图 | g2plotArea | G2plotAreaModule
+starkG2plotBar | Bar - 基础条形图  | g2plotBar | G2plotBarModule
+starkG2plotBullet | Bullet - 子弹图 | g2plotBullet | G2plotBulletModule
+starkG2plotColumn | Column - 柱状图  | g2plotColumn | G2plotColumnModule
+starkG2plotGauge | Gauge - 仪表盘 | g2plotGauge | G2plotGaugeModule
+starkG2plotHeatmap | Heatmap - 热力图 | g2plotHeatmap | G2plotHeatmapModule
+starkG2plotHistogram | Histogram - 直方图  | g2plotHistogram | G2plotHistogramModule
+starkG2plotLine | Line - 折线图 | g2plotLine | G2plotLineModule
+starkG2plotLiquid | Liquid - 水波图 | g2plotLiquid | G2plotLiquidModule
+starkG2plotPie | Pie - 饼图  | g2plotPie | G2plotPieModule
+starkG2plotRadar | Radar - 雷达图 | g2plotRadar | G2plotRadarModule
+starkG2plotRose | Rose - 玫瑰图  | g2plotRose | G2plotRoseModule
+starkG2plotScatter | Scatter - 散点图 | g2plotScatter | G2plotScatterModule
+starkG2plotWaterfall | Waterfall - 瀑布图  | g2plotWaterfall | G2plotWaterfallModule
+starkG2plotWordCloud | WordCloud - 词云 | g2plotWordCloud | G2plotWordCloudModule
 
 ## g2plot官方文档地址 -- G2plot official document address
 https://g2plot.antv.vision/zh/docs/manual/introduction
 
 ## 在线预览 -- Preview
-https://stack-stark.github.io/ngx-g2plot-preview-compiled/
-
+<!-- https://stack-stark.github.io/ngx-g2plot-preview-compiled/ -->
+v2版本暂未开发在线预览,将在后续支持
 ## 使用遇到了问题或者缺陷? -- Use has encountered a problem or defect?
 https://github.com/stack-stark/ngx-g2plot/issues
 
