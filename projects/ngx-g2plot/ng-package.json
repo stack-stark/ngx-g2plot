@@ -4,7 +4,7 @@
   "lib": {
     "entryFile": "src/public-api.ts",
     "umdModuleIds": {
-      "@antv/g2plot": "@antv/g2plot"
+      "@antv/g2plot": "^2.2.13"
     }
   },
   "whitelistedNonPeerDependencies": ["@antv/g2plot"]
