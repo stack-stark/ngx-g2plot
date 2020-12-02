@@ -4,39 +4,11 @@
  * @LastEditors: tanmh
  * @LastEditTime: 2020-12-02 11:03:55
 -->
-# NgxG2plot
+## NgxG2plot
 
-angular的g2plot封装,方便使用,当前版本2.0.0。
+angular的g2plot封装,方便使用。插件仅依赖g2plot,当g2plot有小更新时,更新g2plot即可,大更新时我会跟进进行升级。
 
-
-仅依赖g2plot,当g2plot有小更新时,更新g2plot即可,大更新时我会跟进进行升级。
-
-
-# Npm
-
-https://www.npmjs.com/package/ngx-g2plot
-
-# github
-https://github.com/stack-stark/ngx-g2plot
-
-# License
-
-MIT
-
-# 2.0.0修改如下
-
-1.升级angular版本至11,
-
-2.升级g2plot至V2
-
-3.按需加载
-
-4.删除g2plot不再支持的方法和图表
-
-# 重要提示 -- Important note
-
-g2plot在v2版本去除了一部分图表,修改了实现方法,故本封装跟进,与g2plot保持一致,具体见官方文档说明: https://g2plot.antv.vision/zh/docs/manual/upgrade
-## 安装--Install
+## 安装
 
 ``` bash
 npm install --save @antv/g2plot ngx-g2plot
@@ -44,7 +16,7 @@ npm install --save @antv/g2plot ngx-g2plot
 yarn add @antv/g2plot ngx-g2plot
 ```
 
-## 使用--Usage
+## 使用
 
 #### line.component.html
 
@@ -65,10 +37,10 @@ import { G2plotLineDirective } from 'ngx-g2plot';
 export class LineComponent {
 
   constructor() { }
-  //获取到指令对象 Gets to the instruction object
+  //获取到指令对象 
   @ViewChild('divG2plotLine') divG2plotLine!: G2plotLineDirective;
 
-  data = [
+  data: Array<object> = [
     { year: '1991', value: 3 },
     { year: '1992', value: 4 },
     { year: '1993', value: 3.5 },
@@ -131,7 +103,7 @@ export class LineComponent {
   }
 
   changeSize(): void {
-    //使用当前实例方法 Use the current instance method
+    //使用当前实例方法 
     this.divG2plotLine.instance.changeSize(300, 300);
   }
 }
@@ -152,20 +124,14 @@ import { G2plotLineModule } from 'ngx-g2plot';
 })
 export class G2plotDemoModule { }
 ```
-## 提示 -- Tip
+## 提示 
 我通过指定exportAs导出`update()、changeData()、destroy()`这三种方法，以便您可以在任何时候更改图表。使用方法见上面
 
 如果你需要获取当前图表实例及其所有属性和方法,可使用`this.xxx.instance`,参考见上面的`changeSize()`
 
 图表所有方法见官方文档: https://g2plot.antv.vision/zh/docs/manual/plot-api
 
-I'm using exportAs  the deduced `update(), changeData(), destroy()` the three methods, so that you can at any time to change chart.
-
-If you need to get the current diagram instance and all its properties and methods, use `this.xxx.instance`. See `changeSize()` above for details.
-
-See the official documentation for all methods of charting: https://g2plot.antv.vision/zh/docs/manual/plot-api
-
-## 所有指令列表 -- All Directive
+## 所有指令列表
 
 指令名/Directive | 图表名 | exportAs | Module
 -|-|-|-
@@ -197,14 +163,10 @@ starkG2plotWordCloud | WordCloud - 词云 | g2plotWordCloud | G2plotWordCloudMod
 
 指令名为 `starkG2plot` + `官方图表名称`, exportAs导出为`g2plot` + `官方图表名称`, Module为 `G2plot` + `官方图表名称` + `Module`
 
-## g2plot官方文档地址 -- G2plot official document address
+## g2plot官方文档地址
 https://g2plot.antv.vision/zh/docs/manual/introduction
 
-## 在线预览 -- Preview
-<!-- https://stack-stark.github.io/ngx-g2plot-preview-compiled/ -->
-v2版本暂未开发在线预览,将在后续支持
-
-## 使用遇到了问题或者缺陷? -- Use has encountered a problem or defect?
+## 使用遇到了问题或者缺陷? 
 https://github.com/stack-stark/ngx-g2plot/issues
 
 ## License
