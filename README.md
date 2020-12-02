@@ -2,11 +2,15 @@
  * @Description: 
  * @Date: 2020-05-07 11:57:49
  * @LastEditors: tanmh
- * @LastEditTime: 2020-12-02 09:55:59
+ * @LastEditTime: 2020-12-02 11:03:55
 -->
 # NgxG2plot
 
-angular的g2plot封装,方便使用,当前版本2.0.0
+angular的g2plot封装,方便使用,当前版本2.0.0。
+
+
+仅依赖g2plot,当g2plot有小更新时,更新g2plot即可,大更新时我会跟进进行升级。
+
 
 # Npm
 
@@ -27,7 +31,7 @@ MIT
 
 3.按需加载
 
-4.删除g2plot不再支持的方法和图表导出
+4.删除g2plot不再支持的方法和图表
 
 # 重要提示 -- Important note
 
