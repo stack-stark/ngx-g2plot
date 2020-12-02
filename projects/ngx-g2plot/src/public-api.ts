@@ -1,5 +1,6 @@
 export * from './lib/g2plot-area/g2plot-area.module';
 export * from './lib/g2plot-bar/g2plot-bar.module';
+export * from './lib/g2plot-bidirectional-bar/g2plot-bidirectional-bar.module';
 export * from './lib/g2plot-box/g2plot-box.module';
 export * from './lib/g2plot-bullet/g2plot-bullet.module';
 export * from './lib/g2plot-column/g2plot-column.module';
@@ -24,6 +25,7 @@ export * from './lib/g2plot-word-cloud/g2plot-word-cloud.module';
 
 export * from './lib/g2plot-area/g2plot-area.directive';
 export * from './lib/g2plot-bar/g2plot-bar.directive';
+export * from './lib/g2plot-bidirectional-bar/g2plot-bidirectional-bar.directive';
 export * from './lib/g2plot-box/g2plot-box.directive';
 export * from './lib/g2plot-bullet/g2plot-bullet.directive';
 export * from './lib/g2plot-column/g2plot-column.directive';

@@ -2,7 +2,7 @@
  * @Description: 
  * @Date: 2020-05-07 11:57:49
  * @LastEditors: tanmh
- * @LastEditTime: 2020-12-01 17:49:55
+ * @LastEditTime: 2020-12-02 09:55:59
 -->
 # NgxG2plot
 
@@ -167,6 +167,7 @@ See the official documentation for all methods of charting: https://g2plot.antv.
 -|-|-|-
 starkG2plotArea | Area - 面积图 | g2plotArea | G2plotAreaModule
 starkG2plotBar | Bar - 基础条形图  | g2plotBar | G2plotBarModule
+starkG2plotBidirectionalBar | BidirectionalBar - 对称条形图 | g2plotBidirectionalBar | G2plotBidirectionalBarModule
 starkG2plotBox | Box - 箱图  | g2plotBox | G2plotBoxModule
 starkG2plotBullet | Bullet - 子弹图 | g2plotBullet | G2plotBulletModule
 starkG2plotColumn | Column - 柱状图  | g2plotColumn | G2plotColumnModule
@@ -178,12 +179,19 @@ starkG2plotHistogram | Histogram - 直方图  | g2plotHistogram | G2plotHistogra
 starkG2plotLine | Line - 折线图 | g2plotLine | G2plotLineModule
 starkG2plotLiquid | Liquid - 水波图 | g2plotLiquid | G2plotLiquidModule
 starkG2plotPie | Pie - 饼图  | g2plotPie | G2plotPieModule
+starkG2plotRadialBar | RadialBar - 玉珏图 | g2plotRadialBar | G2plotRadialBarModule
 starkG2plotRadar | Radar - 雷达图 | g2plotRadar | G2plotRadarModule
 starkG2plotRose | Rose - 玫瑰图  | g2plotRose | G2plotRoseModule
 starkG2plotScatter | Scatter - 散点图 | g2plotScatter | G2plotScatterModule
+starkG2plotStock | Stock - 股票图 | g2plotStock | G2plotStockModule
+starkG2plotSunburst | Sunburst - 旭日图图 | g2plotSunburst | G2plotSunburstModule
 starkG2plotTinyColumn | TinyColumn - 迷你图 | g2plotTinyColumn | G2plotTinyColumnModule
 starkG2plotWaterfall | Waterfall - 瀑布图  | g2plotWaterfall | G2plotWaterfallModule
 starkG2plotWordCloud | WordCloud - 词云 | g2plotWordCloud | G2plotWordCloudModule
+
+### 关于命名
+
+指令名为 `starkG2plot` + `官方图表名称`, exportAs导出为`g2plot` + `官方图表名称`, Module为 `G2plot` + `官方图表名称` + `Module`
 
 ## g2plot官方文档地址 -- G2plot official document address
 https://g2plot.antv.vision/zh/docs/manual/introduction
