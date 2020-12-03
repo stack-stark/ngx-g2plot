@@ -123,7 +123,7 @@ If you need to get the current diagram instance and all its properties and metho
 
 See the official documentation for all methods of charting: https://g2plot.antv.vision/zh/docs/manual/plot-api
 
-## All Directive 
+## All Directive
 
 指令名/Directive | 图表名 | exportAs | Module
 -|-|-|-
