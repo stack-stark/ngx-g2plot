@@ -14,7 +14,7 @@ yarn add @antv/g2plot ngx-g2plot
 
 #### line.component.html
 ``` html
-<div starkG2plotBar  #divG2plotLine="g2plotLine" [options]="options"></div>
+<div starkG2plotLine  #divG2plotLine="g2plotLine" [options]="options"></div>
 ```
 
 #### line.component.ts
