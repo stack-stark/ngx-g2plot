@@ -12,6 +12,7 @@ import { G2plotBidirectionalBarDirective } from './g2plot-bidirectional-bar.dire
   declarations: [G2plotBidirectionalBarDirective],
   imports: [
     CommonModule
-  ]
+  ],
+  exports:[G2plotBidirectionalBarDirective]
 })
 export class G2plotBidirectionalBarModule { }

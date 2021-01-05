@@ -8,6 +8,7 @@ import { G2plotBoxDirective } from './g2plot-box.directive';
   declarations: [G2plotBoxDirective],
   imports: [
     CommonModule
-  ]
+  ],
+  exports:[G2plotBoxDirective]
 })
 export class G2plotBoxModule { }
