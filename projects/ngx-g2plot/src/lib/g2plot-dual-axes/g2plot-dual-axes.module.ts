@@ -8,8 +8,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { G2plotDualAxesDirective } from './g2plot-dual-axes.directive';
 
-
-
 @NgModule({
   declarations: [G2plotDualAxesDirective],
   imports: [

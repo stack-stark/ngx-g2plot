@@ -14,6 +14,7 @@ import { G2plotSunburstDirective } from './g2plot-sunburst.directive';
   declarations: [G2plotSunburstDirective],
   imports: [
     CommonModule
-  ]
+  ],
+  exports:[G2plotSunburstDirective]
 })
 export class G2plotSunburstModule { }

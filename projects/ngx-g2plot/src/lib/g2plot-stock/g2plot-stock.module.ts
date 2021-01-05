@@ -8,6 +8,7 @@ import { G2plotStockDirective } from './g2plot-stock.directive';
   declarations: [G2plotStockDirective],
   imports: [
     CommonModule
-  ]
+  ],
+  exports:[G2plotStockDirective]
 })
 export class G2plotStockModule { }

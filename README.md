@@ -1,12 +1,6 @@
-<!--
- * @Description: 
- * @Date: 2020-05-07 11:57:49
- * @LastEditors: tanmh
- * @LastEditTime: 2020-12-02 11:03:55
--->
 ## NgxG2plot
 
-angular的g2plot封装,方便使用。插件仅依赖g2plot,当g2plot有小更新时,更新g2plot即可,大更新时我会跟进进行升级。
+angular的g2plot封装,方便使用。
 
 ## 安装
 
@@ -15,6 +9,10 @@ npm install --save @antv/g2plot ngx-g2plot
 #or
 yarn add @antv/g2plot ngx-g2plot
 ```
+
+## 在线预览
+
+https://stack-stark.github.io/ngx-g2plot-preview-compiled/
 
 ## 使用
 
@@ -140,6 +138,7 @@ starkG2plotBar | Bar - 基础条形图  | g2plotBar | G2plotBarModule
 starkG2plotBidirectionalBar | BidirectionalBar - 对称条形图 | g2plotBidirectionalBar | G2plotBidirectionalBarModule
 starkG2plotBox | Box - 箱图  | g2plotBox | G2plotBoxModule
 starkG2plotBullet | Bullet - 子弹图 | g2plotBullet | G2plotBulletModule
+starkG2plotChord | Chord - 弦图 | g2plotChord | G2plotChordModule
 starkG2plotColumn | Column - 柱状图  | g2plotColumn | G2plotColumnModule
 starkG2plotDualAxes | DualAxes - 柱线混合图  | g2plotDualAxes | G2plotDualAxesModule
 starkG2plotFunnel | Funnel - 漏斗图  | g2plotFunnel | G2plotFunnelModule
@@ -152,10 +151,12 @@ starkG2plotPie | Pie - 饼图  | g2plotPie | G2plotPieModule
 starkG2plotRadialBar | RadialBar - 玉珏图 | g2plotRadialBar | G2plotRadialBarModule
 starkG2plotRadar | Radar - 雷达图 | g2plotRadar | G2plotRadarModule
 starkG2plotRose | Rose - 玫瑰图  | g2plotRose | G2plotRoseModule
+starkG2plotSankey | Sankey - 桑基图  | g2plotSankey | G2plotSankeyModule
 starkG2plotScatter | Scatter - 散点图 | g2plotScatter | G2plotScatterModule
 starkG2plotStock | Stock - 股票图 | g2plotStock | G2plotStockModule
 starkG2plotSunburst | Sunburst - 旭日图图 | g2plotSunburst | G2plotSunburstModule
 starkG2plotTinyColumn | TinyColumn - 迷你图 | g2plotTinyColumn | G2plotTinyColumnModule
+starkG2plotTreemap | Treemap - 树图 | g2plotTreemap | G2plotTreemapModule
 starkG2plotWaterfall | Waterfall - 瀑布图  | g2plotWaterfall | G2plotWaterfallModule
 starkG2plotWordCloud | WordCloud - 词云 | g2plotWordCloud | G2plotWordCloudModule
 

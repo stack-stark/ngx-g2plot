@@ -8,6 +8,7 @@ import { G2plotTinyColumnDirective } from './g2plot-tiny-column.directive';
   declarations: [G2plotTinyColumnDirective],
   imports: [
     CommonModule
-  ]
+  ],
+  exports:[G2plotTinyColumnDirective]
 })
 export class G2plotTinyColumnModule { }

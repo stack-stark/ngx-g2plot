@@ -14,6 +14,7 @@ import { G2plotRadialBarDirective } from './g2plot-radial-bar.directive';
   declarations: [G2plotRadialBarDirective],
   imports: [
     CommonModule
-  ]
+  ],
+  exports:[G2plotRadialBarDirective]
 })
 export class G2plotRadialBarModule { }

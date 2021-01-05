@@ -1,15 +1,15 @@
 {
   "name": "ngx-g2plot",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "peerDependencies": {
     "@angular/common": "^11.0.1",
     "@angular/core": "^11.0.1"
   },
   "dependencies": {
     "tslib": "^2.0.0",
-    "@antv/g2plot": "^2.2.13"
+    "@antv/g2plot": "^2.3.6"
   },
-  "description": "angular的g2plot封装,方便使用--Angular's g2plot package is easy to use",
+  "description": "Angular's g2plot package is easy to use",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/stack-stark/ngx-g2plot.git"
