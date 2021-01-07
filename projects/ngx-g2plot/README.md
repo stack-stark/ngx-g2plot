@@ -5,9 +5,9 @@ Angular's g2plot package is easy to use
 ## Install
 
 ``` bash
-npm install --save @antv/g2plot ngx-g2plot
+npm install --save  ngx-g2plot
 #or
-yarn add @antv/g2plot ngx-g2plot
+yarn add  ngx-g2plot
 ```
 ## Preview
 
