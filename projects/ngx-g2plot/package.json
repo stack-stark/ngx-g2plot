@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "tslib": "^2.0.0",
-    "@antv/g2plot": "^2.3.6"
+    "@antv/g2plot": "^2.3.13"
   },
   "description": "Angular's g2plot package is easy to use",
   "repository": {
