@@ -1,6 +1,6 @@
 {
   "name": "ngx-g2plot",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "peerDependencies": {
     "@angular/common": "^11.0.1",
     "@angular/core": "^11.0.1"
