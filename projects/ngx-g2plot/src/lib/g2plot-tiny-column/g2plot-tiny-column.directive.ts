@@ -38,7 +38,7 @@ export class G2plotTinyColumnDirective implements AfterViewInit {
    * 通过这个方法，可以修改图表的数据，并自动重新渲染
    * @param newData
    */
-  changeData(newData: Array<object>): void {
+  changeData(newData: number[]): void {
     this.instance.changeData(newData);
   }
 
